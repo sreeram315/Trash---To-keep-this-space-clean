@@ -1,0 +1,52 @@
+A51 MACRO ASSEMBLER  7_SEG_ASSEM                                                          03/03/2018 15:28:17 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\7 seg assem.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE 7 seg assem.asm SET(SMALL) DEBUG PRINT(.\Listings\7 seg assem.lst) OBJE
+                      CT(.\Objects\7 seg assem.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0300                   1     ORG 0300H
+0300 C0F9A4B0          2             DB 0C0H,0F9H,0A4H,0B0H,99H,92H,82H,0F8H,80H,90H
+0304 999282F8                
+0308 8090                    
+                       3     
+0200                   4     ORG 0200H
+0200 780A              5             L2: MOV R0,#0AH
+0202 900300            6                     MOV DPTR,#0300H
+0205 E4                7                     L1: CLR A
+0206 93                8                             MOVC A,@A+DPTR
+0207 F5A0              9                             MOV P2,A
+0209 5110             10                             ACALL DELAY
+020B A3               11                             INC DPTR
+020C D8F7             12                             DJNZ R0, L1
+020E 80F0             13                             SJMP L2
+                      14                             
+0210 79FF             15                             DELAY: MOV R1,#0FFH
+0212 7AFF             16                             L3:             MOV R2,#0FFH
+0214 DAFE             17                             L4:             DJNZ R2,L4
+0216 D9FA             18                                             DJNZ R1,L3
+0218 22               19                                             RET
+                      20                                             END
+A51 MACRO ASSEMBLER  7_SEG_ASSEM                                                          03/03/2018 15:28:17 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0210H   A   
+L1 . . . . . . . .  C ADDR   0205H   A   
+L2 . . . . . . . .  C ADDR   0200H   A   
+L3 . . . . . . . .  C ADDR   0212H   A   
+L4 . . . . . . . .  C ADDR   0214H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

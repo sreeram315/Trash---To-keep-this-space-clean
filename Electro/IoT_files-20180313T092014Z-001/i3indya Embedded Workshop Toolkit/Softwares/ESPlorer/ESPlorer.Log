@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-03-24T09:44:53</date>
+  <millis>1490328893757</millis>
+  <sequence>6</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Load saved settings: Firmware:NodeMCU</message>
+</record>
+<record>
+  <date>2017-03-24T09:44:53</date>
+  <millis>1490328893804</millis>
+  <sequence>7</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Snippets: loading...</message>
+</record>
+<record>
+  <date>2017-03-24T09:44:53</date>
+  <millis>1490328893835</millis>
+  <sequence>8</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Snippets load: Success.</message>
+</record>
+<record>
+  <date>2017-03-24T09:44:53</date>
+  <millis>1490328893992</millis>
+  <sequence>9</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Set new color theme: Success.</message>
+</record>
+<record>
+  <date>2017-03-24T09:44:54</date>
+  <millis>1490328894007</millis>
+  <sequence>10</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Load saved settings: DONE.</message>
+</record>
+<record>
+  <date>2017-03-24T09:44:54</date>
+  <millis>1490328894007</millis>
+  <sequence>11</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Snippets: loading...</message>
+</record>
+<record>
+  <date>2017-03-24T09:44:54</date>
+  <millis>1490328894007</millis>
+  <sequence>12</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Snippets load: Success.</message>
+</record>
+<record>
+  <date>2017-03-24T09:44:54</date>
+  <millis>1490328894882</millis>
+  <sequence>13</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Scan system...</message>
+</record>
+<record>
+  <date>2017-03-24T09:44:55</date>
+  <millis>1490328895164</millis>
+  <sequence>14</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Could not find any serial port. Please, connect device and ReScan</message>
+</record>
+<record>
+  <date>2017-03-24T09:44:55</date>
+  <millis>1490328895179</millis>
+  <sequence>15</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>Scan done.</message>
+</record>
+<record>
+  <date>2017-03-24T09:52:20</date>
+  <millis>1490329340682</millis>
+  <sequence>16</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T09:59:17</date>
+  <millis>1490329757823</millis>
+  <sequence>17</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:01:24</date>
+  <millis>1490329884475</millis>
+  <sequence>18</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:08:42</date>
+  <millis>1490330322180</millis>
+  <sequence>19</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:08:42</date>
+  <millis>1490330322180</millis>
+  <sequence>20</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:51</date>
+  <millis>1490330511688</millis>
+  <sequence>21</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:51</date>
+  <millis>1490330511688</millis>
+  <sequence>22</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:52</date>
+  <millis>1490330512985</millis>
+  <sequence>23</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:52</date>
+  <millis>1490330512985</millis>
+  <sequence>24</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:53</date>
+  <millis>1490330513251</millis>
+  <sequence>25</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:53</date>
+  <millis>1490330513251</millis>
+  <sequence>26</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:53</date>
+  <millis>1490330513376</millis>
+  <sequence>27</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:53</date>
+  <millis>1490330513376</millis>
+  <sequence>28</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:53</date>
+  <millis>1490330513532</millis>
+  <sequence>29</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:53</date>
+  <millis>1490330513532</millis>
+  <sequence>30</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:53</date>
+  <millis>1490330513844</millis>
+  <sequence>31</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T10:11:53</date>
+  <millis>1490330513844</millis>
+  <sequence>32</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T09:39:41</date>
+  <millis>1490328581613</millis>
+  <sequence>33</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T09:39:45</date>
+  <millis>1490328585473</millis>
+  <sequence>34</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T09:49:53</date>
+  <millis>1490329193207</millis>
+  <sequence>35</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>
+<record>
+  <date>2017-03-24T09:50:32</date>
+  <millis>1490329232443</millis>
+  <sequence>36</sequence>
+  <logger>ESPlorer.ESPlorer</logger>
+  <level>INFO</level>
+  <class>ESPlorer.ESPlorer</class>
+  <method>log</method>
+  <thread>13</thread>
+  <message>DataSender: Serial port not open, operation FAILED.</message>
+</record>

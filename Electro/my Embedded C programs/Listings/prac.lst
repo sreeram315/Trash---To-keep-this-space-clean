@@ -1,0 +1,30 @@
+C51 COMPILER V9.57.0.0   PRAC                                                              03/01/2018 20:22:36 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE PRAC
+OBJECT MODULE PLACED IN .\Objects\prac.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE prac.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\prac
+                    -.lst) TABS(2) OBJECT(.\Objects\prac.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          void main(void){
+   4   1        P0= 0x35 & 0x0F;
+   5   1        //delay(100);
+   6   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      4    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

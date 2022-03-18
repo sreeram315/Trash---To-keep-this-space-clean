@@ -1,0 +1,252 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/12/2018  16:50:27  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\copied thermos .obj TO .\Objects\copied digi thermos PRINT 
+>> (.\Listings\copied digi thermos.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\copied thermos .obj (COPIED_THERMOS_)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\copied digi thermos (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0017H     UNIT         _DATA_GROUP_
+            IDATA   001FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     0082H     UNIT         ?PR?MAIN?COPIED_THERMOS_
+            CODE    0978H     0034H     UNIT         ?PR?_CONVERT_DISPLAY?COPIED_THERMOS_
+            CODE    09ACH     0028H     UNIT         ?PR?_DELAY?COPIED_THERMOS_
+            CODE    09D4H     0012H     UNIT         ?CO?COPIED_THERMOS_
+            CODE    09E6H     000CH     UNIT         ?C_C51STARTUP
+            CODE    09F2H     000AH     UNIT         ?PR?_CMDWRT?COPIED_THERMOS_
+            CODE    09FCH     000AH     UNIT         ?PR?_DATAWRT?COPIED_THERMOS_
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\copied digi thermos (?C_STARTUP)
+
+
+SEGMENT                                        DATA_GROUP 
+  +--> CALLED SEGMENT                        START    LENGTH
+------------------------------------------------------------
+?C_C51STARTUP                                -----    -----
+  +--> ?PR?MAIN?COPIED_THERMOS_
+
+?PR?MAIN?COPIED_THERMOS_                     0008H    0014H
+  +--> ?CO?COPIED_THERMOS_
+  +--> ?PR?_CMDWRT?COPIED_THERMOS_
+  +--> ?PR?_DELAY?COPIED_THERMOS_
+  +--> ?PR?_DATAWRT?COPIED_THERMOS_
+  +--> ?PR?_CONVERT_DISPLAY?COPIED_THERMOS_
+
+?PR?_CMDWRT?COPIED_THERMOS_                  -----    -----
+  +--> ?PR?_DELAY?COPIED_THERMOS_
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  16:50:27  PAGE 2
+
+
+?PR?_DATAWRT?COPIED_THERMOS_                 -----    -----
+  +--> ?PR?_DELAY?COPIED_THERMOS_
+
+?PR?_CONVERT_DISPLAY?COPIED_THERMOS_         001CH    0003H
+  +--> ?PR?_CMDWRT?COPIED_THERMOS_
+  +--> ?PR?_DATAWRT?COPIED_THERMOS_
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\copied digi thermos (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:09E6H         SEGMENT       ?C_C51STARTUP
+  I:001FH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:09E9H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:09E6H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:09E6H         LINE#         133
+  C:09E8H         LINE#         134
+  C:09E9H         LINE#         135
+  C:09EAH         LINE#         136
+  C:09ECH         LINE#         185
+  C:09EFH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        COPIED_THERMOS_
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:09B4H         PUBLIC        _delay
+  C:09F2H         PUBLIC        _cmdwrt
+  C:08F6H         PUBLIC        main
+  C:09D4H         SYMBOL        _?ix1000
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  16:50:27  PAGE 3
+
+
+  C:09D9H         SYMBOL        _?ix1001
+  B:0080H.6       PUBLIC        intr_adc
+  B:0080H.0       PUBLIC        en
+  B:0080H.4       PUBLIC        rd_adc
+  C:0978H         PUBLIC        _convert_display
+  B:0080H.2       PUBLIC        rs
+  B:0080H.1       PUBLIC        rw
+  B:0080H.5       PUBLIC        wr_adc
+  C:09FCH         PUBLIC        _datawrt
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:0009H         SYMBOL        cmd
+  D:000EH         SYMBOL        data1
+  D:001BH         SYMBOL        value
+  -------         ENDDO         
+  C:08F6H         LINE#         16
+  C:08F6H         LINE#         17
+  C:08F6H         LINE#         19
+  C:0909H         LINE#         20
+  C:091CH         LINE#         23
+  C:091FH         LINE#         24
+  C:0922H         LINE#         26
+  C:0924H         LINE#         27
+  C:0924H         LINE#         28
+  C:092EH         LINE#         29
+  C:0931H         LINE#         30
+  C:093AH         LINE#         32
+  C:093DH         LINE#         33
+  C:093DH         LINE#         34
+  C:0947H         LINE#         35
+  C:094AH         LINE#         36
+  C:0953H         LINE#         38
+  C:0955H         LINE#         39
+  C:0957H         LINE#         40
+  C:0959H         LINE#         42
+  C:0959H         LINE#         43
+  C:0959H         LINE#         44
+  C:095BH         LINE#         45
+  C:095EH         LINE#         46
+  C:0960H         LINE#         47
+  C:0963H         LINE#         48
+  C:0965H         LINE#         49
+  C:0968H         LINE#         50
+  C:096DH         LINE#         51
+  C:0974H         LINE#         52
+  C:0976H         LINE#         53
+  -------         ENDPROC       MAIN
+  -------         PROC          _CMDWRT
+  D:0007H         SYMBOL        x
+  C:09F2H         LINE#         56
+  C:09F2H         LINE#         57
+  C:09F2H         LINE#         58
+  C:09F4H         LINE#         59
+  C:09F6H         LINE#         60
+  C:09F6H         LINE#         61
+  C:09F6H         LINE#         62
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  16:50:27  PAGE 4
+
+
+  C:09F9H         LINE#         63
+  C:09FBH         LINE#         64
+  -------         ENDPROC       _CMDWRT
+  -------         PROC          _DATAWRT
+  D:0007H         SYMBOL        y
+  C:09FCH         LINE#         65
+  C:09FCH         LINE#         66
+  C:09FCH         LINE#         67
+  C:09FEH         LINE#         68
+  C:0A00H         LINE#         69
+  C:0A00H         LINE#         70
+  C:0A00H         LINE#         71
+  C:0A03H         LINE#         72
+  C:0A05H         LINE#         73
+  -------         ENDPROC       _DATAWRT
+  -------         PROC          _CONVERT_DISPLAY
+  D:001CH         SYMBOL        value
+  -------         DO            
+  D:0007H         SYMBOL        x1
+  D:001DH         SYMBOL        x2
+  D:001EH         SYMBOL        x3
+  -------         ENDDO         
+  C:0978H         LINE#         74
+  C:097AH         LINE#         75
+  C:097AH         LINE#         78
+  C:097FH         LINE#         80
+  C:0985H         LINE#         81
+  C:0988H         LINE#         82
+  C:0991H         LINE#         83
+  C:0997H         LINE#         84
+  C:099AH         LINE#         86
+  C:099DH         LINE#         87
+  C:09A2H         LINE#         88
+  C:09A7H         LINE#         89
+  -------         ENDPROC       _CONVERT_DISPLAY
+  C:09B0H         SYMBOL        L?0025
+  -------         PROC          L?0024
+  -------         ENDPROC       L?0024
+  C:09B0H         SYMBOL        L?0025
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        z
+  -------         DO            
+  D:0004H         SYMBOL        p
+  D:0002H         SYMBOL        q
+  -------         ENDDO         
+  C:09B4H         LINE#         92
+  C:09B4H         LINE#         93
+  C:09B4H         LINE#         95
+  C:09BEH         LINE#         96
+  C:09BEH         LINE#         97
+  C:09CCH         LINE#         98
+  C:09D3H         LINE#         99
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        COPIED_THERMOS_
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  16:50:27  PAGE 5
+
+
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0113H BYTE (13%) *
+******************************************************************************
+
+Program Size: data=32.0 xdata=0 code=521
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\jhbcajbcji.obj" 
+TO ".\Objects\testing" 
+PRINT(".\Listings\testing.m51") RAMSIZE(256) 

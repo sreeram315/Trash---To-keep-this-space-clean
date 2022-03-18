@@ -1,0 +1,95 @@
+C51 COMPILER V9.57.0.0   7_SEG_INCR_DECR                                                   03/25/2018 18:57:43 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE 7_SEG_INCR_DECR
+OBJECT MODULE PLACED IN .\Objects\7 seg incr decr.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 7 seg incr decr.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\7 seg incr decr.lst) TABS(2) OBJECT(.\Objects\7 seg incr decr.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit inc=P3^0;
+   3          sbit dec=P3^1;
+   4          unsigned int i=0;
+   5          
+   6          
+   7          
+   8          void increment(){
+   9   1         unsigned char a[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67};
+  10   1         if(i<999){
+  11   2         i+=1;
+  12   2         P1=~a[i/100];
+  13   2           
+  14   2        
+  15   2         P2=~a[i%10];
+  16   2        
+  17   2         
+  18   2         if(i<99)
+  19   2         P0=~a[i/10];
+  20   2         else if(i>99)
+  21   2         P0=~a[i/10%10];
+  22   2         
+  23   2         }
+  24   1       }
+  25          
+  26          void decrement(){
+  27   1         unsigned char a[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67};
+  28   1         if(i>0){
+  29   2         i-=1;
+  30   2         P1=~a[i/100];
+  31   2          
+  32   2         P2=~a[i%10];
+  33   2        
+  34   2         if(i<99)
+  35   2         P0=~a[i/10];
+  36   2         else if(i>99)
+  37   2         P0=~a[i/10%10];
+  38   2         
+  39   2         }
+  40   1       }
+  41          
+  42          
+  43          
+  44          void main(void){
+  45   1        unsigned char inc_pr=0,dec_pr=0;
+  46   1        P3=0x00;
+  47   1        P0=P2=P1=~0x3F;
+  48   1          
+  49   1        while(1){
+  50   2          if(inc==1 && inc_pr==0){
+  51   3            increment();
+  52   3            inc_pr=1;
+  53   3          }
+  54   2          else if(inc!=1){
+C51 COMPILER V9.57.0.0   7_SEG_INCR_DECR                                                   03/25/2018 18:57:43 PAGE 2   
+
+  55   3            inc_pr=0;
+  56   3          }
+  57   2          if(dec==1 && dec_pr==0){
+  58   3            decrement();
+  59   3            dec_pr=1;
+  60   3          }
+  61   2          else if(dec!=1){
+  62   3            dec_pr=0;
+  63   3          }
+  64   2        }
+  65   1      }
+  66                
+  67                
+  68          
+  69              
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    341    ----
+   CONSTANT SIZE    =     20    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2      22
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

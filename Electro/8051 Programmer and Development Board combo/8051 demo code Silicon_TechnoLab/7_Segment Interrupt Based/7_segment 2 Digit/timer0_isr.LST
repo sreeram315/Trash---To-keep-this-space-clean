@@ -1,0 +1,51 @@
+C51 COMPILER V9.03   TIMER0_ISR                                                            01/06/2014 23:38:00 PAGE 1   
+
+
+C51 COMPILER V9.03, COMPILATION OF MODULE TIMER0_ISR
+OBJECT MODULE PLACED IN timer0_isr.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE timer0_isr.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          //#include<reg51.h>
+   2          //#include<header.h>
+   3          //
+   4          //extern unsigned char count;
+   5          //unsigned char count_value=0;
+   6          //unsigned char dgt_1;
+   7          //unsigned char dgt_2;
+   8          //unsigned char siven[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+   9          //void timer0_isr () interrupt 1
+  10          //{
+  11          //      count_value=count;
+  12          //      TF0=0;
+  13          //      TH0=0XFF;
+  14          //      TL0=0xDC;
+  15          //      dgt1=0;
+  16          //      dgt2=1;
+  17          //      dgt3=1;
+  18          //      dgt4=1;
+  19          //      dgt_1=siven[count_value%10];
+  20          //      P0=~dgt_1;
+  21          //      ///////////
+  22          //      dgt1=1;
+  23          //      dgt2=0;
+  24          //      dgt3=1;
+  25          //      dgt4=1;
+  26          //      dgt_2=siven[count_value/10];
+  27          //      P0=~dgt_2;
+  28          //}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

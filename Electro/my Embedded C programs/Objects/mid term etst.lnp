@@ -1,0 +1,3 @@
+".\Objects\midtest.obj" 
+TO ".\Objects\mid term etst" 
+PRINT(".\Listings\mid term etst.m51") RAMSIZE(256) 

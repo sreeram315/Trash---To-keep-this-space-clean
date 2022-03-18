@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\anthertestthermos.obj" 
+TO ".\Objects\anothe test thermos" 
+PRINT(".\Listings\anothe test thermos.m51") RAMSIZE(256) 

@@ -1,0 +1,46 @@
+C51 COMPILER V9.57.0.0   77                                                                03/02/2018 10:09:20 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE 77
+OBJECT MODULE PLACED IN .\Objects\77.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 77.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\77.lst
+                    -) TABS(2) OBJECT(.\Objects\77.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          void msdelay(unsigned int time)  // Function for creating delay in milliseconds.
+   4          {
+   5   1          unsigned i,j ;
+   6   1          for(i=0;i<time;i++)    
+   7   1          for(j=0;j<1275;j++);
+   8   1      }
+   9          
+  10          void main()
+  11          {
+  12   1          unsigned char no_code[]={0x3F}; //Array for hex values (0-9) for common anode 7 segment
+  13   1          int k;
+  14   1          while(1)
+  15   1          {
+  16   2              for(k=0;k<12;k++)
+  17   2              {
+  18   3               P1=no_code[0]; 
+  19   3               msdelay(1000);
+  20   3              }
+  21   2          }
+  22   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     75    ----
+   CONSTANT SIZE    =      1    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

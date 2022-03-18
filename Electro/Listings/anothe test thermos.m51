@@ -1,0 +1,262 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/12/2018  16:17:27  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\anthertestthermos.obj TO .\Objects\anothe test thermos PRIN
+>> T (.\Listings\anothe test thermos.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\anthertestthermos.obj (ANTHERTESTTHERMOS)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\anothe test thermos (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0010H     UNIT         _DATA_GROUP_
+            DATA    0018H     0002H     UNIT         ?DT?ANTHERTESTTHERMOS
+            IDATA   001AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     005EH     UNIT         ?PR?MAIN?ANTHERTESTTHERMOS
+            CODE    0954H     0031H     UNIT         ?PR?_CONVERTPRINT?ANTHERTESTTHERMOS
+            CODE    0985H     0030H     UNIT         ?PR?_DELAY?ANTHERTESTTHERMOS
+            CODE    09B5H     0019H     UNIT         ?PR?LCD_INI?ANTHERTESTTHERMOS
+            CODE    09CEH     000EH     UNIT         ?CO?ANTHERTESTTHERMOS
+            CODE    09DCH     000CH     UNIT         ?C_C51STARTUP
+            CODE    09E8H     0008H     UNIT         ?PR?_LCD_CMD?ANTHERTESTTHERMOS
+            CODE    09F0H     0008H     UNIT         ?PR?_LCD_DATA?ANTHERTESTTHERMOS
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\anothe test thermos (?C_STARTUP)
+
+
+SEGMENT                                       DATA_GROUP 
+  +--> CALLED SEGMENT                       START    LENGTH
+-----------------------------------------------------------
+?C_C51STARTUP                               -----    -----
+  +--> ?PR?MAIN?ANTHERTESTTHERMOS
+
+?PR?MAIN?ANTHERTESTTHERMOS                  0008H    000FH
+  +--> ?CO?ANTHERTESTTHERMOS
+  +--> ?PR?LCD_INI?ANTHERTESTTHERMOS
+  +--> ?PR?_LCD_DATA?ANTHERTESTTHERMOS
+  +--> ?PR?_DELAY?ANTHERTESTTHERMOS
+  +--> ?PR?_CONVERTPRINT?ANTHERTESTTHERMOS
+
+?PR?LCD_INI?ANTHERTESTTHERMOS               -----    -----
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  16:17:27  PAGE 2
+
+
+  +--> ?PR?_LCD_CMD?ANTHERTESTTHERMOS
+
+?PR?_LCD_CMD?ANTHERTESTTHERMOS              -----    -----
+  +--> ?PR?_DELAY?ANTHERTESTTHERMOS
+
+?PR?_LCD_DATA?ANTHERTESTTHERMOS             -----    -----
+  +--> ?PR?_DELAY?ANTHERTESTTHERMOS
+
+?PR?_CONVERTPRINT?ANTHERTESTTHERMOS         0017H    0001H
+  +--> ?PR?_LCD_CMD?ANTHERTESTTHERMOS
+  +--> ?PR?_LCD_DATA?ANTHERTESTTHERMOS
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\anothe test thermos (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:09DCH         SEGMENT       ?C_C51STARTUP
+  I:001AH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:09DFH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:09DCH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:09DCH         LINE#         133
+  C:09DEH         LINE#         134
+  C:09DFH         LINE#         135
+  C:09E0H         LINE#         136
+  C:09E2H         LINE#         185
+  C:09E5H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ANTHERTESTTHERMOS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:0080H.1       PUBLIC        rw_lcd
+  D:0080H         PUBLIC        P0
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  16:17:27  PAGE 3
+
+
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  B:0080H.3       PUBLIC        chip_select
+  C:098FH         PUBLIC        _delay
+  C:08F6H         PUBLIC        main
+  C:09F0H         PUBLIC        _lcd_data
+  C:0954H         PUBLIC        _convertprint
+  B:0080H.6       PUBLIC        intr
+  C:09CEH         SYMBOL        _?ix1000
+  C:09E8H         PUBLIC        _lcd_cmd
+  C:09B5H         PUBLIC        lcd_ini
+  B:0080H.4       PUBLIC        rd_adc
+  D:0018H         PUBLIC        i
+  B:0080H.0       PUBLIC        en_lcd
+  D:0019H         PUBLIC        j
+  B:0080H.5       PUBLIC        wr_adc
+  B:0080H.2       PUBLIC        rs_lcd
+  C:098BH         SYMBOL        L?0023
+  -------         PROC          L?0022
+  -------         ENDPROC       L?0022
+  C:098BH         SYMBOL        L?0023
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:098FH         LINE#         12
+  C:098FH         LINE#         13
+  C:098FH         LINE#         15
+  C:099FH         LINE#         16
+  C:09B4H         LINE#         17
+  -------         ENDPROC       _DELAY
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        x
+  C:09E8H         LINE#         18
+  C:09E8H         LINE#         19
+  C:09E8H         LINE#         20
+  C:09EAH         LINE#         21
+  C:09EAH         LINE#         22
+  C:09EAH         LINE#         23
+  C:09EAH         LINE#         24
+  C:09EDH         LINE#         25
+  C:09EFH         LINE#         26
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          LCD_INI
+  C:09B5H         LINE#         28
+  C:09B5H         LINE#         29
+  C:09B5H         LINE#         30
+  C:09BAH         LINE#         31
+  C:09BFH         LINE#         32
+  C:09C4H         LINE#         33
+  C:09C9H         LINE#         34
+  -------         ENDPROC       LCD_INI
+  -------         PROC          _LCD_DATA
+  D:0007H         SYMBOL        x
+  C:09F0H         LINE#         37
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  16:17:27  PAGE 4
+
+
+  C:09F0H         LINE#         38
+  C:09F0H         LINE#         39
+  C:09F2H         LINE#         40
+  C:09F2H         LINE#         41
+  C:09F2H         LINE#         42
+  C:09F2H         LINE#         43
+  C:09F5H         LINE#         44
+  C:09F7H         LINE#         45
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _CONVERTPRINT
+  D:0001H         SYMBOL        x
+  -------         DO            
+  D:0006H         SYMBOL        x1
+  D:0001H         SYMBOL        x2
+  D:0017H         SYMBOL        x3
+  -------         ENDDO         
+  C:0954H         LINE#         47
+  C:0956H         LINE#         48
+  C:0956H         LINE#         50
+  C:095BH         LINE#         51
+  C:0960H         LINE#         52
+  C:0963H         LINE#         53
+  C:096AH         LINE#         54
+  C:096EH         LINE#         55
+  C:0971H         LINE#         56
+  C:0976H         LINE#         57
+  C:097BH         LINE#         58
+  C:0980H         LINE#         59
+  -------         ENDPROC       _CONVERTPRINT
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        value
+  D:0009H         SYMBOL        a
+  -------         ENDDO         
+  C:08F6H         LINE#         62
+  C:08F6H         LINE#         63
+  C:08F6H         LINE#         66
+  C:0909H         LINE#         67
+  C:090BH         LINE#         68
+  C:090EH         LINE#         69
+  C:0911H         LINE#         70
+  C:0914H         LINE#         71
+  C:0917H         LINE#         72
+  C:0919H         LINE#         73
+  C:0919H         LINE#         74
+  C:0923H         LINE#         75
+  C:0926H         LINE#         76
+  C:092FH         LINE#         77
+  C:0931H         LINE#         78
+  C:0933H         LINE#         79
+  C:0935H         LINE#         80
+  C:0935H         LINE#         81
+  C:0935H         LINE#         82
+  C:0937H         LINE#         83
+  C:093AH         LINE#         84
+  C:093CH         LINE#         85
+  C:093FH         LINE#         86
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/12/2018  16:17:27  PAGE 5
+
+
+  C:0941H         LINE#         87
+  C:0944H         LINE#         88
+  C:0949H         LINE#         89
+  C:0950H         LINE#         90
+  C:0952H         LINE#         91
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ANTHERTESTTHERMOS
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0105H BYTE (12%) *
+******************************************************************************
+
+Program Size: data=27.0 xdata=0 code=507
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

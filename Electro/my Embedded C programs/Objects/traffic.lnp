@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\TRAFFIC.obj" 
+TO ".\Objects\traffic" 
+PRINT(".\Listings\traffic.m51") RAMSIZE(256) 

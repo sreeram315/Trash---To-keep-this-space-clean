@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\rl shift.obj" 
+TO ".\Objects\right left shifts" 
+PRINT(".\Listings\right left shifts.m51") RAMSIZE(256) 

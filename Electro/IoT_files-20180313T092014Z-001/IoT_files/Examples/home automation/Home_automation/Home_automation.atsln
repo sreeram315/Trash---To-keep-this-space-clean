@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Home_automation", "Home_automation\Home_automation.cproj", "{C29DCFD2-D35D-48CE-82BD-5795FA7EDEAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C29DCFD2-D35D-48CE-82BD-5795FA7EDEAE}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C29DCFD2-D35D-48CE-82BD-5795FA7EDEAE}.Debug|AVR.Build.0 = Debug|AVR
+		{C29DCFD2-D35D-48CE-82BD-5795FA7EDEAE}.Release|AVR.ActiveCfg = Release|AVR
+		{C29DCFD2-D35D-48CE-82BD-5795FA7EDEAE}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

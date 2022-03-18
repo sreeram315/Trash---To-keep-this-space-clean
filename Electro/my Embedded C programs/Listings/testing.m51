@@ -1,0 +1,239 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/30/2018  03:16:17  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\jhbcajbcji.obj TO .\Objects\testing PRINT (.\Listings\testi
+>> ng.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\jhbcajbcji.obj (JHBCAJBCJI)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\testing (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     003FH     UNIT         _DATA_GROUP_
+            DATA    0047H     0003H     UNIT         ?DT?_LCD_ARRAY?JHBCAJBCJI
+            DATA    004AH     0002H     UNIT         ?DT?JHBCAJBCJI
+            IDATA   004CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0123H     UNIT         ?C?LIB_CODE
+            CODE    0923H     0041H     UNIT         ?CO?JHBCAJBCJI
+            CODE    0964H     0035H     UNIT         ?PR?MAIN?JHBCAJBCJI
+            CODE    0999H     0030H     UNIT         ?PR?_LCD_ARRAY?JHBCAJBCJI
+            CODE    09C9H     002BH     UNIT         ?PR?_LCD_LINE?JHBCAJBCJI
+            CODE    09F4H     0028H     UNIT         ?PR?_DELAY?JHBCAJBCJI
+            CODE    0A1CH     0019H     UNIT         ?PR?LCD_INI?JHBCAJBCJI
+            CODE    0A35H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0A41H     000AH     UNIT         ?PR?_LCD_CMD?JHBCAJBCJI
+            CODE    0A4BH     000AH     UNIT         ?PR?_LCD_DATA?JHBCAJBCJI
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\testing (?C_STARTUP)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?JHBCAJBCJI
+
+?PR?MAIN?JHBCAJBCJI               0008H    003CH
+  +--> ?CO?JHBCAJBCJI
+  +--> ?PR?LCD_INI?JHBCAJBCJI
+  +--> ?PR?_LCD_DATA?JHBCAJBCJI
+  +--> ?PR?_DELAY?JHBCAJBCJI
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/30/2018  03:16:17  PAGE 2
+
+
+  +--> ?PR?_LCD_LINE?JHBCAJBCJI
+
+?PR?LCD_INI?JHBCAJBCJI            -----    -----
+  +--> ?PR?_LCD_CMD?JHBCAJBCJI
+
+?PR?_LCD_CMD?JHBCAJBCJI           -----    -----
+  +--> ?PR?_DELAY?JHBCAJBCJI
+
+?PR?_LCD_DATA?JHBCAJBCJI          -----    -----
+  +--> ?PR?_DELAY?JHBCAJBCJI
+
+?PR?_LCD_LINE?JHBCAJBCJI          0044H    0003H
+  +--> ?PR?_LCD_DATA?JHBCAJBCJI
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\testing (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0A35H         SEGMENT       ?C_C51STARTUP
+  I:004CH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0A38H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0A35H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0A35H         LINE#         133
+  C:0A37H         LINE#         134
+  C:0A38H         LINE#         135
+  C:0A39H         LINE#         136
+  C:0A3BH         LINE#         185
+  C:0A3EH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        JHBCAJBCJI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/30/2018  03:16:17  PAGE 3
+
+
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:09FCH         PUBLIC        _delay
+  C:0964H         PUBLIC        main
+  C:0A4BH         PUBLIC        _lcd_data
+  C:0999H         PUBLIC        _lcd_array
+  C:09C9H         PUBLIC        _lcd_line
+  C:0928H         SYMBOL        _?ix1000
+  C:0A41H         PUBLIC        _lcd_cmd
+  B:00B0H.5       PUBLIC        en
+  C:0A1CH         PUBLIC        lcd_ini
+  B:00B0H.7       PUBLIC        rs
+  D:004AH         PUBLIC        i
+  B:00B0H.6       PUBLIC        rw
+  -------         PROC          L?0022
+  -------         ENDPROC       L?0022
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        z
+  -------         DO            
+  D:0004H         SYMBOL        p
+  D:0002H         SYMBOL        q
+  -------         ENDDO         
+  C:09FCH         LINE#         6
+  C:09FCH         LINE#         7
+  C:09FCH         LINE#         9
+  C:0A06H         LINE#         10
+  C:0A1BH         LINE#         11
+  -------         ENDPROC       _DELAY
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        a
+  C:0A41H         LINE#         13
+  C:0A41H         LINE#         14
+  C:0A43H         LINE#         15
+  C:0A45H         LINE#         16
+  C:0A45H         LINE#         17
+  C:0A45H         LINE#         18
+  C:0A48H         LINE#         19
+  C:0A4AH         LINE#         20
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          LCD_INI
+  C:0A1CH         LINE#         21
+  C:0A1CH         LINE#         22
+  C:0A21H         LINE#         23
+  C:0A26H         LINE#         24
+  C:0A2BH         LINE#         25
+  C:0A30H         LINE#         26
+  -------         ENDPROC       LCD_INI
+  -------         PROC          _LCD_DATA
+  D:0007H         SYMBOL        a
+  C:0A4BH         LINE#         30
+  C:0A4BH         LINE#         32
+  C:0A4DH         LINE#         33
+  C:0A4FH         LINE#         34
+  C:0A4FH         LINE#         35
+  C:0A4FH         LINE#         36
+  C:0A52H         LINE#         37
+  C:0A54H         LINE#         39
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/30/2018  03:16:17  PAGE 4
+
+
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _LCD_LINE
+  D:0044H         SYMBOL        str
+  C:09C9H         LINE#         41
+  C:09CFH         LINE#         42
+  C:09CFH         LINE#         43
+  C:09D4H         LINE#         44
+  C:09E6H         LINE#         45
+  C:09E6H         LINE#         46
+  C:09E9H         LINE#         47
+  C:09F1H         LINE#         48
+  C:09F3H         LINE#         49
+  -------         ENDPROC       _LCD_LINE
+  -------         PROC          _LCD_ARRAY
+  D:0047H         SYMBOL        a
+  C:0999H         LINE#         52
+  C:099FH         LINE#         53
+  C:099FH         LINE#         54
+  C:09B9H         LINE#         55
+  C:09C6H         LINE#         57
+  C:09C8H         LINE#         58
+  -------         ENDPROC       _LCD_ARRAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        a
+  -------         ENDDO         
+  C:0964H         LINE#         60
+  C:0964H         LINE#         61
+  C:0964H         LINE#         62
+  C:0977H         LINE#         63
+  C:097AH         LINE#         64
+  C:097FH         LINE#         65
+  C:0986H         LINE#         66
+  C:0989H         LINE#         67
+  C:0992H         LINE#         68
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        JHBCAJBCJI
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CLDOPTR
+  C:08F6H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_ARRAY?JHBCAJBCJI
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0135H BYTE (15%) *
+******************************************************************************
+
+Program Size: data=77.0 xdata=0 code=600
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

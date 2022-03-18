@@ -1,0 +1,10 @@
+".\Objects\STARTUP.obj",
+".\Objects\send values.obj",
+".\Objects\bit wise valuse giving.obj",
+".\Objects\toggle.obj",
+".\Objects\sending code to port.obj",
+".\Objects\taking and giving from port.obj",
+".\Objects\7 seg.obj",
+".\Objects\prac.obj" 
+TO ".\Objects\seend values" 
+PRINT(".\Listings\seend values.m51") RAMSIZE(256) 

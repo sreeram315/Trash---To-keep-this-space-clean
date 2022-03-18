@@ -1,0 +1,6 @@
+".\Objects\STARTUP.obj",
+".\Objects\traffic_almost.obj",
+".\Objects\internet_traffic.obj",
+".\Objects\7 seg.obj" 
+TO ".\Objects\taffic almost final" 
+PRINT(".\Listings\taffic almost final.m51") RAMSIZE(256) 

@@ -1,0 +1,286 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\ramu\programs\digital clock using 8051\digital clock.uvproj
+Project File Date:  07/11/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(119): warning C206: 'lcd_data_int': missing function-prototype
+digital clock.c(119): error C267: 'lcd_data_int': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(128): warning C206: 'lcd_data_string': missing function-prototype
+digital clock.c(128): error C267: 'lcd_data_string': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(130): warning C206: 'lcd_data_int': missing function-prototype
+digital clock.c(130): error C267: 'lcd_data_int': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(132): warning C206: 'lcd_data_int': missing function-prototype
+digital clock.c(132): error C267: 'lcd_data_int': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(147): warning C206: 'lcd_data_string': missing function-prototype
+digital clock.c(147): error C267: 'lcd_data_string': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(147): warning C206: 'lcd_data_string': missing function-prototype
+digital clock.c(147): error C267: 'lcd_data_string': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(147): warning C206: 'lcd_data_string': missing function-prototype
+digital clock.c(147): error C267: 'lcd_data_string': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(207): warning C206: 'lcd_data_string': missing function-prototype
+digital clock.c(207): error C267: 'lcd_data_string': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1105
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1105
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 1 Warning(s).
+Rebuild target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1105
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1105
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Rebuild target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1105
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Rebuild target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1105
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1090
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1090
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1064
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Rebuild target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1060
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1086
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Rebuild target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1086
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Rebuild target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1086
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Rebuild target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1090
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1086
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1084
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1082
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1058
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1048
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).
+Rebuild target 'Target 1'
+compiling digital clock.c...
+digital clock.c(73): warning C290: missing return value
+digital clock.c(162): warning C290: missing return value
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+Program Size: data=91.0 xdata=0 code=1048
+creating hex file from "digital clock"...
+"digital clock" - 0 Error(s), 3 Warning(s).

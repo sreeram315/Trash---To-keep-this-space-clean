@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\senddd.obj" 
+TO ".\Objects\sendddd" 
+PRINT(".\Listings\sendddd.m51") RAMSIZE(256) 

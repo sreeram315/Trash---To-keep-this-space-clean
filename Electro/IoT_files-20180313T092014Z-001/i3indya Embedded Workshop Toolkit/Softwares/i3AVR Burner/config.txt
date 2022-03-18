@@ -1,0 +1,4 @@
+
+$*settings:
+programer=usbasp;
+microcontroler=ATMEGA16;

@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\toogle invert.obj" 
+TO ".\Objects\toggle using invert" 
+PRINT(".\Listings\toggle using invert.m51") RAMSIZE(256) 

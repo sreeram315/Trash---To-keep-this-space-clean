@@ -1,0 +1,13 @@
+
+	ORG 00H
+	MOV R0,#70H
+	MOV A,#70H
+	SUBB A,R0
+	JNZ HELLO
+	MOV R0,#11H
+	
+		HELLO:
+		CLR A
+		END
+			OVER:
+			END

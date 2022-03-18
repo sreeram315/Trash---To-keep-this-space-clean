@@ -1,0 +1,87 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/03/2018  16:36:57  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\MULTI 77 SEGS.obj TO .\Objects\MULTI 7 SEGS ASSEMBLY PRINT (.\Listings\MULTI 7 SEG
+>> S ASSEMBLY.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\MULTI 77 SEGS.obj (MULTI_77_SEGS)
+
+
+LINK MAP OF MODULE:  .\Objects\MULTI 7 SEGS ASSEMBLY (MULTI_77_SEGS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     030AH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\MULTI 7 SEGS ASSEMBLY (MULTI_77_SEGS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MULTI_77_SEGS
+  C:0234H         SYMBOL        COUNT
+  C:0244H         SYMBOL        DELAY
+  C:0239H         SYMBOL        L1
+  C:0234H         SYMBOL        L2
+  C:0246H         SYMBOL        L3
+  C:0248H         SYMBOL        L4
+  C:0200H         SYMBOL        LOOP
+  D:00A0H         SYMBOL        P2
+  D:00B0H         SYMBOL        P3
+  C:0200H         LINE#         6
+  C:0203H         LINE#         7
+  C:0205H         LINE#         8
+  C:0208H         LINE#         9
+  C:020AH         LINE#         10
+  C:020DH         LINE#         11
+  C:020FH         LINE#         12
+  C:0212H         LINE#         13
+  C:0214H         LINE#         14
+  C:0217H         LINE#         15
+  C:0219H         LINE#         16
+  C:021CH         LINE#         17
+  C:021EH         LINE#         18
+  C:0221H         LINE#         19
+  C:0223H         LINE#         20
+  C:0226H         LINE#         21
+  C:0228H         LINE#         22
+  C:022BH         LINE#         23
+  C:022DH         LINE#         24
+  C:0230H         LINE#         25
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/03/2018  16:36:57  PAGE 2
+
+
+  C:0232H         LINE#         26
+  C:0234H         LINE#         29
+  C:0236H         LINE#         30
+  C:0239H         LINE#         31
+  C:023AH         LINE#         32
+  C:023BH         LINE#         33
+  C:023DH         LINE#         34
+  C:023FH         LINE#         35
+  C:0240H         LINE#         36
+  C:0242H         LINE#         37
+  C:0244H         LINE#         40
+  C:0246H         LINE#         41
+  C:0248H         LINE#         42
+  C:024AH         LINE#         43
+  C:024CH         LINE#         44
+  -------         ENDMOD        MULTI_77_SEGS
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0057H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=778
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

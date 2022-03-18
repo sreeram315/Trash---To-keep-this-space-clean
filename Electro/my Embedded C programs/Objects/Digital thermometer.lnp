@@ -1,0 +1,5 @@
+".\Objects\STARTUP.obj",
+".\Objects\thermos.obj",
+".\Objects\ultraonic intering.obj" 
+TO ".\Objects\Digital thermometer" 
+PRINT(".\Listings\Digital thermometer.m51") RAMSIZE(256) 

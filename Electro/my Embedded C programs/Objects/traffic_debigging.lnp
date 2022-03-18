@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\traffic debugginhh.obj" 
+TO ".\Objects\traffic_debigging" 
+PRINT(".\Listings\traffic_debigging.m51") RAMSIZE(256) 

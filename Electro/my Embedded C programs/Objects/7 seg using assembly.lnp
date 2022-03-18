@@ -1,0 +1,4 @@
+".\Objects\7 seg assem.obj",
+".\Objects\multi 7 segs.obj" 
+TO ".\Objects\7 seg using assembly" 
+PRINT(".\Listings\7 seg using assembly.m51") RAMSIZE(256) 

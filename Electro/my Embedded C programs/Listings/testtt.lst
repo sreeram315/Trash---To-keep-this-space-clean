@@ -1,0 +1,89 @@
+C51 COMPILER V9.57.0.0   TESTTT                                                            03/20/2018 20:54:40 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE TESTTT
+OBJECT MODULE PLACED IN .\Objects\testtt.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE testtt.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\te
+                    -sttt.lst) TABS(2) OBJECT(.\Objects\testtt.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<stdio.h>
+   3          sbit rs=P1^2; sbit rw=P1^1; sbit en=P1^0;
+   4          sbit trig=P0^0; sbit echo=P0^1;
+   5          unsigned char i;
+   6          void delay(int time)
+   7          {
+   8   1        int i,j;
+   9   1        for(i=0;i<time;i++)
+  10   1        for(j=0;j<=1275;j++);
+  11   1      }
+  12          
+  13          void _10usdelay()
+  14          {
+  15   1        i=10;i=10;i=10;i=10;i=10;
+  16   1        i=0;i=0;i=0;i=0;i=0;
+  17   1        i=9;i=0;
+  18   1      }
+  19          
+  20          void lcd_cmd(unsigned char x)
+  21          {
+  22   1        rs=0;
+  23   1        rw=0;
+  24   1        P2=x;
+  25   1        en=1;
+  26   1        delay(1);
+  27   1        en=0;
+  28   1      }
+  29          
+  30          void lcd_ini()
+  31          {
+  32   1        lcd_cmd(0x38);
+  33   1        lcd_cmd(0x01);
+  34   1        lcd_cmd(0x06);
+  35   1        lcd_cmd(0x0C);
+  36   1        lcd_cmd(0x80);
+  37   1      }
+  38          
+  39          void lcd_data(unsigned char x)
+  40          {
+  41   1        rs=1;
+  42   1        rw=0;
+  43   1        P2=x;
+  44   1        en=1;
+  45   1        delay(1);
+  46   1        en=0;
+  47   1      }
+  48          
+  49          void main()
+  50          {
+  51   1        unsigned char a,a1,a2;
+  52   1        while(1){
+  53   2        lcd_ini();
+  54   2        a=38;
+C51 COMPILER V9.57.0.0   TESTTT                                                            03/20/2018 20:54:40 PAGE 2   
+
+  55   2        a1=a%10;
+  56   2        a1=a1+0x30;
+  57   2        a2=a/10;
+  58   2        a2=a2+0x30;
+  59   2        lcd_data(a2);
+  60   2        lcd_data(a1);
+  61   2        delay(20);
+  62   2        }
+  63   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    169    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

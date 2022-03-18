@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\copied thermos .obj" 
+TO ".\Objects\copied digi thermos" 
+PRINT(".\Listings\copied digi thermos.m51") RAMSIZE(256) 

@@ -1,0 +1,43 @@
+A51 MACRO ASSEMBLER  TOGG                                                                 02/25/2018 08:17:46 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\togg.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE togg.asm SET(SMALL) DEBUG PRINT(.\Listings\togg.lst) OBJECT(.\Objects\t
+                      ogg.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 000H
+0000 7937              2             L1:MOV R1,#55
+0002 110B              3             ACALL DELAY
+0004 7590AA            4             MOV P1,#0AAH
+0007 110B              5             ACALL DELAY
+0009 80F5              6             SJMP L1
+                       7             
+000B                   8                     DELAY:
+000B 7BFF              9                     MOV R3,#0FFH
+000D 7CFF             10                     L3: MOV R4,#0FFH
+000F DCFE             11                     L2: DJNZ R4,L2
+0011 DBFA             12                     DJNZ R3,L3
+0013 22               13                     RET
+                      14                     END
+A51 MACRO ASSEMBLER  TOGG                                                                 02/25/2018 08:17:46 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   000BH   A   
+L1 . . . . . . . .  C ADDR   0000H   A   
+L2 . . . . . . . .  C ADDR   000FH   A   
+L3 . . . . . . . .  C ADDR   000DH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

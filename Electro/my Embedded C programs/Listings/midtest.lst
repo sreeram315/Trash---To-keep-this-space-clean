@@ -1,0 +1,39 @@
+A51 MACRO ASSEMBLER  MIDTEST                                                              03/11/2018 22:34:27 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\midtest.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE midtest.asm SET(SMALL) DEBUG PRINT(.\Listings\midtest.lst) OBJECT(.\Obj
+                      ects\midtest.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+0000                   2             ORG 00H
+0000 7870              3             MOV R0,#70H
+0002 7470              4             MOV A,#70H
+0004 98                5             SUBB A,R0
+0005 7002              6             JNZ HELLO
+0007 7811              7             MOV R0,#11H
+                       8             
+0009                   9                     HELLO:
+0009 E4               10                     CLR A
+                      11                     END
+                                                     OVER:
+*** WARNING #A73 IN 12 (midtest.asm, LINE 12): TEXT FOUND BEYOND END STATEMENT - IGNORED
+                                                     END
+A51 MACRO ASSEMBLER  MIDTEST                                                              03/11/2018 22:34:27 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HELLO. . . . . . .  C ADDR   0009H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)

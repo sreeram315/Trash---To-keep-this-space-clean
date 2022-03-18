@@ -1,0 +1,25 @@
+C51 COMPILER V9.57.0.0   TESTT                                                             03/02/2018 10:54:41 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE TESTT
+OBJECT MODULE PLACED IN .\Objects\testt.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE testt.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\tes
+                    -tt.lst) TABS(2) OBJECT(.\Objects\testt.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void delay ( unsigned int t){
+   3   1        unsigned int i,j;
+   4   1        for(i=0;i<t;i++){
+   5   2          for(j=0;j<1275;j++);}}
+   6          void main(void){
+   7   1        while(1){
+   8   2        P11=0xFF;
+*** ERROR C202 IN LINE 8 OF testt.c: 'P11': undefined identifier
+   9   2        delay(100);
+  10   2        P1=0x55;}
+  11   1      }
+  12            
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

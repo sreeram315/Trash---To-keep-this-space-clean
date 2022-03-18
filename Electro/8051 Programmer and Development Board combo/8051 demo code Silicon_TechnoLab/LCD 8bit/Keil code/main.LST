@@ -1,0 +1,159 @@
+C51 COMPILER V9.03   MAIN                                                                  09/19/2014 00:12:55 PAGE 1   
+
+
+C51 COMPILER V9.03, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          
+   2          #include<reg51.h>
+   3          #define LCD_Data_Bus  P1 // LCD data pin connected to PORT1
+   4          
+   5          
+   6          #define FirstLine  0x80
+   7          #define SecondLine 0xC0
+   8          sbit _RS= P2^2;    // Register select pin connected to P2.2
+   9          sbit _RW= P2^1;    // Read/Write pin connected to P2.1
+  10          sbit _EN= P2^0;    // Enable pin connected to P2.0
+  11          
+  12          
+  13          
+  14          void Delay_ms(unsigned int ms);
+  15          void LCD_Init(void);
+  16          void LCD_Clear(void);
+  17          void LCD_Cmd(char cmd);
+  18          void LCD_Data(char Data);
+  19          void LCD_DisplayString(char String[]);
+  20          
+  21          
+  22          
+  23           void main()
+  24           {
+  25   1          LCD_Init();//Initilize the lcd before displaying any thing on the lcd 
+  26   1          LCD_Clear();//Clear LCD Screen
+  27   1          LCD_DisplayString("    SILICON     ");//Display on first line
+  28   1          LCD_Cmd(SecondLine);//Goto Second Line
+  29   1          LCD_DisplayString("   TECHNOLABS   ");//Display on Second Line
+  30   1          while(1);  
+  31   1       }
+  32          /*----------------------------------------------------------------------------------
+  33                                   void Delay_ms(unsigned int ms)
+  34           -----------------------------------------------------------------------------------
+  35           I/P Arguments: unsigned int.
+  36           Return value : none
+  37           description  : This function is used generate delay in ms.
+  38                          if ms = 1000 then it generates delay of apprx 1sec
+  39          -----------------------------------------------------------------------------------*/
+  40          void Delay_ms(unsigned int ms)
+  41           {
+  42   1        unsigned int i,j;
+  43   1        for(i=0;i<ms;i++)
+  44   1          for(j=0;j<127;j++);
+  45   1       }
+  46          /*----------------------------------------------------------------------------------
+  47                                   void LCD_Init()
+  48           ----------------------------------------------------------------------------------
+  49           Function name:  LCD_Init()
+  50           I/P Arguments: none.
+  51           Return value : none
+  52           description  :This function is used to initialize the lcd in 8-bit mode
+  53          
+  54          ----------------------------------------------------------------------------------*/
+  55          void LCD_Init()
+C51 COMPILER V9.03   MAIN                                                                  09/19/2014 00:12:55 PAGE 2   
+
+  56          {
+  57   1         Delay_ms(5);
+  58   1         LCD_Cmd(0x38); //Initilize the LCD in 8bit Mode
+  59   1         LCD_Cmd(0x0E); // Display ON cursor ON
+  60   1         LCD_Cmd(0x01); // Clear the LCD
+  61   1         LCD_Cmd(0x80); // Move the Cursor to First line First Position
+  62   1      
+  63   1      }
+  64          /*---------------------------------------------------------------------------------
+  65                                   void LCD_Clear()
+  66           ----------------------------------------------------------------------------------
+  67           I/P Arguments: none.
+  68           Return value : none
+  69           description  :This function clears the LCD and moves the cursor to first Position
+  70          
+  71          -----------------------------------------------------------------------------------*/
+  72          void LCD_Clear()
+  73          {
+  74   1         LCD_Cmd(0x01); // Clear the LCD and go to First line First Position
+  75   1      }
+  76          /*----------------------------------------------------------------------------------
+  77                                 void LCD_Cmd( char cmd)
+  78          ------------------------------------------------------------------------------------
+  79           I/P Arguments: 8-bit command supported by LCD.
+  80           Return value : none
+  81           description  : This function sends a command to LCD in the following steps.
+  82                          Set RS low for Command.
+  83                          Set RW low for Write.
+  84                          Send the 8bit of the I/P command to LCD.
+  85                          Send a High-to-Low pulse on Enable PIN with some delay_us.
+  86          ----------------------------------------------------------------------------------*/
+  87          void LCD_Cmd( char cmd)
+  88          {
+  89   1         _RS=0;           // RS = 0 for Command.
+  90   1         _RW=0;           // RW = 0 for write.
+  91   1         LCD_Data_Bus=cmd; // 8bit command to LCD.
+  92   1         _EN=1;           // Send a High-to-Low Pusle at Enable Pin.
+  93   1         Delay_ms(2);
+  94   1         _EN=0;
+  95   1         Delay_ms(2);
+  96   1      }
+  97          /*---------------------------------------------------------------------------------
+  98                                 void LCD_Data( char Data)
+  99           ----------------------------------------------------------------------------------
+ 100           Function name: LCD_Data()
+ 101           I/P Arguments: ASCII value of the char to be displayed.
+ 102           Return value : none
+ 103           description  : This function sends a DATA to LCD in the following steps.
+ 104                          Set RS high for Data.
+ 105                          Set RW low for Write.
+ 106                          Send the 8bit Data to LCD.
+ 107                          Send a High-to-Low Pusle at Enable Pin.
+ 108          ----------------------------------------------------------------------------------*/
+ 109          void LCD_Data( char Data)
+ 110          {
+ 111   1         _RS=1;           // RS = 1 for Data.
+ 112   1         _RW=0;           // RW = 0 for write.
+ 113   1         LCD_Data_Bus=Data; // 8bit command to LCD.
+ 114   1         _EN=1;           // Send a High-to-Low Pusle at Enable Pin.
+ 115   1         Delay_ms(2);
+ 116   1         _EN=0;
+ 117   1         Delay_ms(2);
+C51 COMPILER V9.03   MAIN                                                                  09/19/2014 00:12:55 PAGE 3   
+
+ 118   1      }
+ 119          /*---------------------------------------------------------------------------------
+ 120                                 void LCD_DisplayString(char String[])
+ 121           ----------------------------------------------------------------------------------
+ 122           Function name:  LCD_DisplayString()
+ 123           I/P Arguments:  String to be displayed.
+ 124           Return value :  none
+ 125           description  :  This function is used to display the ASCII string on the lcd.                           
+ 126          -----------------------------------------------------------------------------------*/
+ 127          void LCD_DisplayString(char String[])
+ 128          {
+ 129   1         unsigned char i;
+ 130   1         for(i=0;String[i]!='\0';i++)
+ 131   1          LCD_Data(String[i]);
+ 132   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    160    ----
+   CONSTANT SIZE    =     34    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

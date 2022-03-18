@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\ultraonic intering.obj" 
+TO ".\Objects\ultrasonic interface" 
+PRINT(".\Listings\ultrasonic interface.m51") RAMSIZE(256) 

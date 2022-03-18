@@ -1,0 +1,408 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/15/2014  13:19:57  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE digital clock.obj TO digital clock
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  digital clock.obj (DIGITAL_CLOCK)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?SIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  digital clock (DIGITAL_CLOCK)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0048H     UNIT         ?DT?DIGITAL_CLOCK
+            DATA    0050H     000AH     UNIT         _DATA_GROUP_
+            IDATA   005AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0010H                  *** GAP ***
+            CODE    0013H     0003H     ABSOLUTE     
+                    0016H     07EAH                  *** GAP ***
+            CODE    0800H     00B8H     UNIT         ?C?LIB_CODE
+            CODE    08B8H     0092H     UNIT         ?PR?SET_TIME?DIGITAL_CLOCK
+            CODE    094AH     008CH     UNIT         ?C_C51STARTUP
+            CODE    09D6H     0053H     UNIT         ?C_INITSEG
+            CODE    0A29H     003CH     UNIT         ?PR?SET_RTC_TIME?DIGITAL_CLOCK
+            CODE    0A65H     003AH     UNIT         ?PR?READ_RTC_DISPLAY?DIGITAL_CLOCK
+            CODE    0A9FH     0039H     UNIT         ?PR?_LCD_STRING?DIGITAL_CLOCK
+            CODE    0AD8H     002FH     UNIT         ?PR?MAIN?DIGITAL_CLOCK
+            CODE    0B07H     002BH     UNIT         ?PR?SET_MIN1?DIGITAL_CLOCK
+            CODE    0B32H     0028H     UNIT         ?PR?_DELAY?DIGITAL_CLOCK
+            CODE    0B5AH     0024H     UNIT         ?PR?_LCD_INT?DIGITAL_CLOCK
+            CODE    0B7EH     0024H     UNIT         ?PR?LCD?DIGITAL_CLOCK
+            CODE    0BA2H     0022H     UNIT         ?PR?SET_HR1?DIGITAL_CLOCK
+            CODE    0BC4H     001BH     UNIT         ?PR?_BCDCONV?DIGITAL_CLOCK
+            CODE    0BDFH     0018H     UNIT         ?PR?_LCD_DATA?DIGITAL_CLOCK
+            CODE    0BF7H     0011H     UNIT         ?CO?DIGITAL_CLOCK
+            CODE    0C08H     000AH     UNIT         ?PR?_LCD_CMD?DIGITAL_CLOCK
+
+
+
+OVERLAY MAP OF MODULE:   digital clock (DIGITAL_CLOCK)
+
+
+SEGMENT                                      DATA_GROUP 
+  +--> CALLED SEGMENT                      START    LENGTH
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/15/2014  13:19:57  PAGE 2
+
+
+----------------------------------------------------------
+?PR?SET_TIME?DIGITAL_CLOCK                 -----    -----
+  +--> ?PR?_LCD_CMD?DIGITAL_CLOCK
+  +--> ?CO?DIGITAL_CLOCK
+  +--> ?PR?_LCD_STRING?DIGITAL_CLOCK
+  +--> ?PR?_LCD_DATA?DIGITAL_CLOCK
+  +--> ?PR?_LCD_INT?DIGITAL_CLOCK
+  +--> ?PR?_DELAY?DIGITAL_CLOCK
+  +--> ?PR?SET_HR1?DIGITAL_CLOCK
+  +--> ?PR?SET_MIN1?DIGITAL_CLOCK
+  +--> ?PR?SET_RTC_TIME?DIGITAL_CLOCK
+
+?PR?_LCD_CMD?DIGITAL_CLOCK                 -----    -----
+  +--> ?PR?_DELAY?DIGITAL_CLOCK
+
+?PR?_LCD_STRING?DIGITAL_CLOCK              0055H    0005H
+  +--> ?PR?_LCD_CMD?DIGITAL_CLOCK
+  +--> ?CO?DIGITAL_CLOCK
+  +--> ?PR?_LCD_DATA?DIGITAL_CLOCK
+  +--> ?PR?_DELAY?DIGITAL_CLOCK
+
+?PR?_LCD_DATA?DIGITAL_CLOCK                -----    -----
+  +--> ?PR?_LCD_CMD?DIGITAL_CLOCK
+  +--> ?PR?_LCD_INT?DIGITAL_CLOCK
+  +--> ?PR?_DELAY?DIGITAL_CLOCK
+
+?PR?SET_HR1?DIGITAL_CLOCK                  -----    -----
+  +--> ?PR?_LCD_DATA?DIGITAL_CLOCK
+
+?PR?SET_MIN1?DIGITAL_CLOCK                 -----    -----
+  +--> ?PR?_LCD_CMD?DIGITAL_CLOCK
+  +--> ?PR?_LCD_INT?DIGITAL_CLOCK
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                              -----    -----
+  +--> ?PR?MAIN?DIGITAL_CLOCK
+  +--> ?C_INITSEG
+
+?PR?MAIN?DIGITAL_CLOCK                     -----    -----
+  +--> ?PR?LCD?DIGITAL_CLOCK
+  +--> ?PR?_LCD_CMD?DIGITAL_CLOCK
+  +--> ?PR?_LCD_STRING?DIGITAL_CLOCK
+  +--> ?PR?READ_RTC_DISPLAY?DIGITAL_CLOCK
+
+?PR?LCD?DIGITAL_CLOCK                      -----    -----
+  +--> ?PR?_LCD_CMD?DIGITAL_CLOCK
+  +--> ?PR?_DELAY?DIGITAL_CLOCK
+
+?PR?READ_RTC_DISPLAY?DIGITAL_CLOCK         -----    -----
+  +--> ?PR?_LCD_CMD?DIGITAL_CLOCK
+  +--> ?PR?_BCDCONV?DIGITAL_CLOCK
+  +--> ?PR?_LCD_DATA?DIGITAL_CLOCK
+
+?PR?_BCDCONV?DIGITAL_CLOCK                 -----    -----
+  +--> ?PR?_LCD_DATA?DIGITAL_CLOCK
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/15/2014  13:19:57  PAGE 3
+
+
+
+
+SYMBOL TABLE OF MODULE:  digital clock (DIGITAL_CLOCK)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DIGITAL_CLOCK
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0A29H         PUBLIC        set_rtc_time
+  D:0008H         PUBLIC        hr0
+  D:000AH         PUBLIC        hr1
+  B:0090H.5       PUBLIC        dig_min1
+  D:00A8H         PUBLIC        IE
+  C:0B3AH         PUBLIC        _delay
+  B:0090H.4       PUBLIC        dig_hr1
+  C:0A65H         PUBLIC        read_rtc_display
+  C:0B07H         PUBLIC        set_min1
+  B:0090H.0       PUBLIC        reset
+  C:0AD8H         PUBLIC        main
+  C:0AAAH         PUBLIC        _lcd_string
+  C:0BEDH         PUBLIC        _lcd_data
+  B:0090H.6       PUBLIC        start
+  C:0B7EH         PUBLIC        lcd
+  D:000CH         PUBLIC        temp
+  C:0BA2H         PUBLIC        set_hr1
+  D:000DH         PUBLIC        sec
+  D:000EH         PUBLIC        min
+  C:0C08H         PUBLIC        _lcd_cmd
+  D:000FH         PUBLIC        num
+  D:004BH         PUBLIC        hr
+  C:08B8H         PUBLIC        set_time
+  C:0B5AH         PUBLIC        _lcd_int
+  C:0BC4H         PUBLIC        _bcdconv
+  B:0090H.3       PUBLIC        e
+  B:0090H.1       PUBLIC        rs
+  B:0090H.2       PUBLIC        rw
+  D:004CH         PUBLIC        min0
+  D:004EH         PUBLIC        min1
+  C:0B36H         SYMBOL        L?0038
+  -------         PROC          L?0037
+  -------         ENDPROC       L?0037
+  C:0B36H         SYMBOL        L?0038
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        msec
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0B3AH         LINE#         24
+  C:0B3AH         LINE#         25
+  C:0B3AH         LINE#         27
+  C:0B44H         LINE#         28
+  C:0B59H         LINE#         29
+  -------         ENDPROC       _DELAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/15/2014  13:19:57  PAGE 4
+
+
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        item
+  C:0C08H         LINE#         31
+  C:0C08H         LINE#         32
+  C:0C08H         LINE#         33
+  C:0C0AH         LINE#         34
+  C:0C0CH         LINE#         35
+  C:0C0CH         LINE#         36
+  C:0C0CH         LINE#         37
+  C:0C0FH         LINE#         38
+  C:0C11H         LINE#         40
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          L?0036
+  -------         ENDPROC       L?0036
+  -------         PROC          _LCD_DATA
+  D:0007H         SYMBOL        item
+  C:0BEDH         LINE#         43
+  C:0BEDH         LINE#         44
+  C:0BEDH         LINE#         45
+  C:0BEFH         LINE#         46
+  C:0BF1H         LINE#         47
+  C:0BF1H         LINE#         48
+  C:0BF1H         LINE#         49
+  C:0BF4H         LINE#         50
+  C:0BF6H         LINE#         52
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          L?0039
+  -------         ENDPROC       L?0039
+  -------         PROC          _LCD_STRING
+  D:0055H         SYMBOL        str
+  -------         DO            
+  D:0058H         SYMBOL        i
+  -------         ENDDO         
+  C:0AAAH         LINE#         54
+  C:0AB0H         LINE#         55
+  C:0AB0H         LINE#         56
+  C:0AB5H         LINE#         57
+  C:0AC7H         LINE#         58
+  C:0AC7H         LINE#         59
+  C:0ACAH         LINE#         60
+  C:0AD2H         LINE#         61
+  C:0AD5H         LINE#         62
+  C:0AD7H         LINE#         64
+  -------         ENDPROC       _LCD_STRING
+  -------         PROC          _LCD_INT
+  D:0082H         SYMBOL        time_val
+  -------         DO            
+  D:0006H         SYMBOL        int_amt
+  -------         ENDDO         
+  C:0B5AH         LINE#         66
+  C:0B5EH         LINE#         67
+  C:0B5EH         LINE#         69
+  C:0B65H         LINE#         70
+  C:0B6CH         LINE#         71
+  C:0B77H         LINE#         72
+  -------         ENDPROC       _LCD_INT
+  -------         PROC          LCD
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/15/2014  13:19:57  PAGE 5
+
+
+  C:0B7EH         LINE#         76
+  C:0B7EH         LINE#         77
+  C:0B7EH         LINE#         78
+  C:0B83H         LINE#         79
+  C:0B8AH         LINE#         80
+  C:0B8FH         LINE#         81
+  C:0B96H         LINE#         82
+  C:0B9BH         LINE#         83
+  -------         ENDPROC       LCD
+  -------         PROC          SET_RTC_TIME
+  C:0A29H         LINE#         86
+  C:0A29H         LINE#         87
+  C:0A29H         LINE#         88
+  C:0A2FH         LINE#         89
+  C:0A33H         LINE#         90
+  C:0A38H         LINE#         91
+  C:0A3EH         LINE#         92
+  C:0A44H         LINE#         93
+  C:0A4AH         LINE#         94
+  C:0A4CH         LINE#         95
+  C:0A50H         LINE#         96
+  C:0A56H         LINE#         97
+  C:0A5AH         LINE#         98
+  C:0A5EH         LINE#         99
+  C:0A64H         LINE#         100
+  -------         ENDPROC       SET_RTC_TIME
+  -------         PROC          SET_HR1
+  C:0BA2H         LINE#         102
+  C:0BA2H         LINE#         103
+  C:0BA2H         LINE#         104
+  C:0BAAH         LINE#         105
+  C:0BB5H         LINE#         106
+  C:0BBAH         LINE#         107
+  C:0BBAH         LINE#         108
+  C:0BBAH         LINE#         109
+  C:0BBDH         LINE#         110
+  C:0BC3H         LINE#         111
+  -------         ENDPROC       SET_HR1
+  -------         PROC          SET_MIN1
+  C:0B07H         LINE#         113
+  C:0B07H         LINE#         114
+  C:0B07H         LINE#         115
+  C:0B0FH         LINE#         116
+  C:0B1AH         LINE#         117
+  C:0B1FH         LINE#         118
+  C:0B24H         LINE#         119
+  C:0B2BH         LINE#         120
+  C:0B31H         LINE#         121
+  -------         ENDPROC       SET_MIN1
+  -------         PROC          SET_TIME
+  C:08B8H         LINE#         123
+  C:08D5H         LINE#         125
+  C:08DAH         LINE#         126
+  C:08DDH         LINE#         127
+  C:08DDH         LINE#         128
+  C:08E6H         LINE#         129
+  C:08E6H         LINE#         130
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/15/2014  13:19:57  PAGE 6
+
+
+  C:08E6H         LINE#         131
+  C:08E9H         LINE#         132
+  C:08F0H         LINE#         133
+  C:08F3H         LINE#         134
+  C:08F3H         LINE#         135
+  C:08FAH         LINE#         136
+  C:08FDH         LINE#         137
+  C:0900H         LINE#         138
+  C:0903H         LINE#         139
+  C:0906H         LINE#         140
+  C:0908H         LINE#         141
+  C:0908H         LINE#         142
+  C:090DH         LINE#         143
+  C:0915H         LINE#         144
+  C:091DH         LINE#         145
+  C:0920H         LINE#         146
+  C:0920H         LINE#         147
+  C:0923H         LINE#         148
+  C:0929H         LINE#         149
+  C:092FH         LINE#         150
+  -------         ENDPROC       SET_TIME
+  -------         PROC          _BCDCONV
+  D:0006H         SYMBOL        mybyte
+  -------         DO            
+  D:0001H         SYMBOL        x
+  D:0007H         SYMBOL        y
+  -------         ENDDO         
+  C:0BC4H         LINE#         152
+  C:0BC6H         LINE#         153
+  C:0BC6H         LINE#         155
+  C:0BCAH         LINE#         156
+  C:0BCDH         LINE#         157
+  C:0BD0H         LINE#         158
+  C:0BD4H         LINE#         159
+  C:0BD7H         LINE#         160
+  C:0BDAH         LINE#         161
+  -------         ENDPROC       _BCDCONV
+  -------         PROC          READ_RTC_DISPLAY
+  C:0A65H         LINE#         164
+  C:0A65H         LINE#         165
+  C:0A65H         LINE#         167
+  C:0A6BH         LINE#         168
+  C:0A71H         LINE#         169
+  C:0A76H         LINE#         171
+  C:0A76H         LINE#         172
+  C:0A7BH         LINE#         173
+  C:0A80H         LINE#         174
+  C:0A86H         LINE#         175
+  C:0A86H         LINE#         177
+  C:0A8CH         LINE#         180
+  C:0A8CH         LINE#         181
+  C:0A90H         LINE#         182
+  C:0A95H         LINE#         184
+  C:0A95H         LINE#         185
+  C:0A9BH         LINE#         188
+  C:0A9BH         LINE#         189
+  -------         ENDPROC       READ_RTC_DISPLAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/15/2014  13:19:57  PAGE 7
+
+
+  -------         PROC          MAIN
+  C:0AD8H         LINE#         194
+  C:0AD8H         LINE#         195
+  C:0AD8H         LINE#         196
+  C:0ADAH         LINE#         197
+  C:0ADDH         LINE#         198
+  C:0AE3H         LINE#         199
+  C:0AE9H         LINE#         200
+  C:0AEDH         LINE#         201
+  C:0AF1H         LINE#         202
+  C:0AF7H         LINE#         203
+  C:0AFCH         LINE#         204
+  C:0AFFH         LINE#         205
+  C:0AFFH         LINE#         206
+  C:0B02H         LINE#         207
+  C:0B02H         LINE#         208
+  C:0B02H         LINE#         209
+  C:0B05H         LINE#         210
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DIGITAL_CLOCK
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0800H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?SIDIV
+  C:082DH         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?UIDIV
+  C:0863H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STRING?DIGITAL_CLOCK
+    CALLER1: ?PR?SET_TIME?DIGITAL_CLOCK
+    CALLER2: ?C_C51STARTUP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 02D0H BYTE (35%) *
+******************************************************************************
+
+Program Size: data=91.0 xdata=0 code=1048
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

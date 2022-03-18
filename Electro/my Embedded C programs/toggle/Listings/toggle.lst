@@ -1,0 +1,43 @@
+A51 MACRO ASSEMBLER  TOGGLE                                                               03/02/2018 10:46:35 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\toggle.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE toggle.asm SET(SMALL) DEBUG PRINT(.\Listings\toggle.lst) OBJECT(.\Objec
+                      ts\toggle.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 000H
+0000 758037            2             L1:MOV P0,#55
+0003 110C              3             ACALL DELAY
+0005 7580AA            4             MOV P0,#0AAH
+0008 110C              5             ACALL DELAY
+000A 80F4              6             SJMP L1
+                       7             
+000C                   8                     DELAY:
+000C 7BFF              9                     MOV R3,#0FFH
+000E 7CFF             10                     L3: MOV R4,#0FFH
+0010 DCFE             11                     L2: DJNZ R4,L2
+0012 DBFA             12                     DJNZ R3,L3
+0014 22               13                     RET
+                      14                     END
+A51 MACRO ASSEMBLER  TOGGLE                                                               03/02/2018 10:46:35 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   000CH   A   
+L1 . . . . . . . .  C ADDR   0000H   A   
+L2 . . . . . . . .  C ADDR   0010H   A   
+L3 . . . . . . . .  C ADDR   000EH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

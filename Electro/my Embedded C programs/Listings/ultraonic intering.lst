@@ -1,0 +1,136 @@
+C51 COMPILER V9.57.0.0   ULTRAONIC_INTERING                                                03/28/2018 01:55:41 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE ULTRAONIC_INTERING
+OBJECT MODULE PLACED IN .\Objects\ultraonic intering.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ultraonic intering.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\ultraonic intering.lst) TABS(2) OBJECT(.\Objects\ultraonic intering.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<stdio.h>
+   3          #include<intrins.h>
+   4          
+   5          sbit rs=P1^2; sbit rw=P1^1; sbit en=P1^0;
+   6          sbit trig=P0^0; sbit echo=P0^1;
+   7          void lcd_data(unsigned char x);
+   8          unsigned char i=0,j;
+   9          void delay(int time)
+  10          {
+  11   1        int i,j;
+  12   1        for(i=0;i<time;i++)
+  13   1        for(j=0;j<=1275;j++);
+  14   1      }
+  15          
+  16          
+  17          void lcd_cmd(unsigned char x)
+  18          {
+  19   1        rs=0;
+  20   1        rw=0;
+  21   1        P2=x;
+  22   1        en=1;
+  23   1        delay(1);
+  24   1        en=0;
+  25   1      }
+  26          
+  27          void lcd_ini()
+  28          {
+  29   1        lcd_cmd(0x38);
+  30   1        lcd_cmd(0x01);
+  31   1        lcd_cmd(0x06);
+  32   1        lcd_cmd(0x0C);
+  33   1        lcd_cmd(0x80);
+  34   1      }
+  35          
+  36          void lcd_data(unsigned char x)
+  37          {
+  38   1        rs=1;
+  39   1        rw=0;
+  40   1        P2=x;
+  41   1        en=1;
+  42   1        en=0;
+  43   1      }
+  44          
+  45          void lcd_string(unsigned char *str)
+  46          {
+  47   1        i=0;
+  48   1        while(str[i] != '\0')
+  49   1        {
+  50   2          lcd_data(str[i]);
+  51   2          i++;
+  52   2        }
+  53   1      }
+  54          
+C51 COMPILER V9.57.0.0   ULTRAONIC_INTERING                                                03/28/2018 01:55:41 PAGE 2   
+
+  55          void trigger()
+  56          {
+  57   1        
+  58   1        trig=1;
+  59   1        delay(10);
+  60   1        trig=0;
+  61   1      }
+  62          
+  63          void main()
+  64          {
+  65   1        int time;
+  66   1        TR0=1;
+  67   1        P2=0x00;
+  68   1        P1=0x00;
+  69   1        P0=0x02;
+  70   1        lcd_ini();
+  71   1        lcd_string("Starting now");
+  72   1        TMOD=0x01;
+  73   1        trig=0;
+  74   1        while(1)
+  75   1        {
+  76   2        lcd_ini();
+  77   2        lcd_string("Distance is:");
+  78   2        TR0=0;
+  79   2        TH0=0x00;
+  80   2        TL0=0x00;
+  81   2        trigger();
+  82   2        while(echo==0);
+  83   2        TR0=1;
+  84   2        while(echo==1);
+  85   2        TR0=0;
+  86   2        time= ((TH0<<8)|TL0);
+  87   2          if(time<150){
+  88   3            lcd_cmd(0xC0);
+  89   3            lcd_string("Too near");}
+  90   2          else{
+  91   3        time=time/59;
+  92   3        if(time<35000)
+  93   3        {
+  94   4          delay(10);
+  95   4          lcd_cmd(0xC0);
+  96   4          lcd_data((time/100) + 0x30);
+  97   4          lcd_data(((time/10)%10) + 0x30);
+  98   4          lcd_data((time%10) + 0x30);
+  99   4          lcd_string("cm");
+ 100   4          delay(10);
+ 101   4        }
+ 102   3        else
+ 103   3        {
+ 104   4          lcd_ini();
+ 105   4          lcd_string("OBJECT OUT OF RANGE");
+ 106   4        }}delay(100);
+ 107   2      }
+ 108   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    361    ----
+   CONSTANT SIZE    =     58    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2       5
+C51 COMPILER V9.57.0.0   ULTRAONIC_INTERING                                                03/28/2018 01:55:41 PAGE 3   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

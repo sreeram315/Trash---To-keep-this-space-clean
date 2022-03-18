@@ -1,0 +1,5 @@
+".\Objects\STARTUP.obj",
+".\Objects\praccise.obj",
+".\Objects\toggle using inverter.obj" 
+TO ".\Objects\pracice" 
+PRINT(".\Listings\pracice.m51") RAMSIZE(256) 

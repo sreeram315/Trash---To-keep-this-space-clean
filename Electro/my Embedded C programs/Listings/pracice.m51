@@ -1,0 +1,169 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/01/2018  20:35:56  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\praccise.obj, .\Objects\toggle using inverter.obj TO .\Obje
+>> cts\pracice PRINT (.\Listings\pracice.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\praccise.obj (PRACCISE)
+  .\Objects\toggle using inverter.obj (TOGGLE_USING_INVERTER)
+
+
+LINK MAP OF MODULE:  .\Objects\pracice (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     001CH     UNIT         ?PR?_DELAY?PRACCISE
+            CODE    081CH     001CH     UNIT         ?PR?_DELAY?TOGGLE_USING_INVERTER
+            CODE    0838H     0012H     UNIT         ?PR?MAIN?TOGGLE_USING_INVERTER
+            CODE    084AH     000DH     UNIT         ?PR?MAIN?PRACCISE
+            CODE    0857H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\pracice (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?PRACCISE
+
+?PR?MAIN?PRACCISE
+  +--> ?PR?_DELAY?PRACCISE
+
+
+
+IGNORED SYMBOLS:
+   MAIN
+   _DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\pracice (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2018  20:35:56  PAGE 2
+
+
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0857H         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:085AH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0857H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0857H         LINE#         133
+  C:0859H         LINE#         134
+  C:085AH         LINE#         135
+  C:085BH         LINE#         136
+  C:085DH         LINE#         185
+  C:0860H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        PRACCISE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  C:0800H         PUBLIC        _delay
+  C:084AH         PUBLIC        main
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         2
+  C:0800H         LINE#         4
+  C:0809H         LINE#         5
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:084AH         LINE#         6
+  C:084AH         LINE#         7
+  C:084DH         LINE#         8
+  C:0850H         LINE#         9
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2018  20:35:56  PAGE 3
+
+
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        PRACCISE
+
+  -------         MODULE        TOGGLE_USING_INVERTER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:081CH         PUBLIC        _delay
+  C:0838H         PUBLIC        main
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:081CH         LINE#         2
+  C:081CH         LINE#         4
+  C:0825H         LINE#         5
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:0838H         LINE#         6
+  C:0838H         LINE#         7
+  C:0838H         LINE#         8
+  C:083BH         LINE#         9
+  C:0842H         LINE#         10
+  C:0845H         LINE#         11
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TOGGLE_USING_INVERTER
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\toggle using inverter.obj (TOGGLE_USING_INVERTER)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  .\Objects\toggle using inverter.obj (TOGGLE_USING_INVERTER)
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?TOGGLE_USING_INVERTER
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0066H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=102
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  2 ERROR(S)

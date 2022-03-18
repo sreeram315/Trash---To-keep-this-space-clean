@@ -1,0 +1,99 @@
+C51 COMPILER V9.57.0.0   TRAFFIC_DEBUGGINHH                                                03/07/2018 10:56:06 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE TRAFFIC_DEBUGGINHH
+OBJECT MODULE PLACED IN .\Objects\traffic debugginhh.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE traffic debugginhh.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\traffic debugginhh.lst) TABS(2) OBJECT(.\Objects\traffic debugginhh.obj)
+
+line level    source
+
+   1          #include<stdio.h>
+   2          #include<reg51.h>
+   3          void delay(unsigned int);       
+   4          void Wait30Sec(void);    
+   5          void Wait3Sec(void);
+   6          sbit NR=P0^0; sbit NY=P0^1; sbit NG=P0^2; 
+   7          sbit ER=P0^4; sbit EY=P0^5; sbit EG=P0^6;
+   8          sbit WRR=P1^0; sbit WY=P1^1; sbit WG=P1^2; 
+   9          sbit SR=P1^4; sbit SY=P1^5; sbit SG=P1^6; 
+  10          
+  11          
+  12          void main()                           
+  13            {
+  14   1          while(1)
+  15   1          {
+  16   2          
+  17   2           NR=1; NY=1; NG=0;       
+  18   2           SR=1; SY=1; SG=0;         
+  19   2           ER=0; EY=1; EG=1;        
+  20   2           WRR=0; WY=1; WG=1;
+  21   2           Wait30Sec();                            
+  22   2           NR=1; NY=1; NG=0;    
+  23   2           SR=1; SY=1; SG=0;      
+  24   2           ER=1; EY=0; EG=1;     
+  25   2           WRR=1; WY=0; WG=1;
+  26   2           Wait3Sec();                         
+  27   2           NR=0; NY=1; NG=1;      
+  28   2           SR=0; SY=1; SG=1;       
+  29   2           ER=1; EY=1; EG=0;     
+  30   2           WRR=1; WY=1; WG=0;
+  31   2           Wait30Sec();
+  32   2           NR=1; NY=0; NG=1;     
+  33   2           SR=1; SY=0; SG=1;
+  34   2           ER=1; EY=1; EG=0;      
+  35   2           WRR=1; WY=1; WG=0;
+  36   2           Wait3Sec();
+  37   2           }
+  38   1         }
+  39            
+  40             
+  41            void Wait30Sec(void)     
+  42              {
+  43   1            unsigned char a[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67};
+  44   1            unsigned char b[]={0x3F,0x06,0x5B};   //Array for hex values (0-9) for common anode 7 segment
+  45   1            int k,j;
+  46   1            P3=~0x4F;
+  47   1            P2=~0x3F;
+  48   1            delay(100);
+  49   1            
+  50   1            for(j=2;j>=0;j--)
+  51   1            {
+  52   2              P3=~b[j];
+  53   2              for(k=9;k>=0;k--)
+  54   2              {
+C51 COMPILER V9.57.0.0   TRAFFIC_DEBUGGINHH                                                03/07/2018 10:56:06 PAGE 2   
+
+  55   3               P2=~a[k]; 
+  56   3               delay(100);
+  57   3              }
+  58   2            }
+  59   1          }
+  60              
+  61            void Wait3Sec(void) 
+  62              {
+  63   1            delay(300);
+  64   1          }
+  65              
+  66            void delay(unsigned int time) 
+  67              {   
+  68   1          unsigned int i,j;
+  69   1            for(i=0;i<time;i++)     
+  70   1             {
+  71   2               for(j=0;j<1275;j++);
+  72   2             }
+  73   1          }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    272    ----
+   CONSTANT SIZE    =     13    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      17
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

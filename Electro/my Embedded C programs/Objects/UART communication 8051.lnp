@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\uart com 8051.obj" 
+TO ".\Objects\UART communication 8051" 
+PRINT(".\Listings\UART communication 8051.m51") RAMSIZE(256) 

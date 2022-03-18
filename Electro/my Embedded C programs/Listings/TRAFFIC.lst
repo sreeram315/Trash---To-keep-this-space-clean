@@ -1,0 +1,97 @@
+C51 COMPILER V9.57.0.0   TRAFFIC                                                           02/27/2018 11:51:44 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE TRAFFIC
+OBJECT MODULE PLACED IN .\Objects\TRAFFIC.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE TRAFFIC.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\T
+                    -RAFFIC.lst) TABS(2) OBJECT(.\Objects\TRAFFIC.obj)
+
+line level    source
+
+   1          #include<stdio.h>
+   2          #include<reg51.h>
+   3          void delay(unsigned int);       
+   4          void count1(void);    
+   5          void count2(void);
+   6          sbit NR=P0^0; sbit NY=P0^1; sbit NG=P0^2; sbit NGL=P0^3; 
+   7          sbit ER=P0^4; sbit EY=P0^5; sbit EG=P0^6; sbit EGL=P0^7;  
+   8          sbit WER=P1^0; sbit WEY=P1^1; sbit WEG=P1^2; sbit WEGL=P1^3;  
+   9          sbit SR=P1^4; sbit SY=P1^5; sbit SG=P1^6; sbit SGL=P1^7; 
+  10          unsigned char a[10]={0x90,0x80,0xF8,0x82,0x92,0x99,0xB0,0xA4,0xF9,0xC0};
+  11          unsigned char b[7]={0xA4,0xF9}; 
+  12          unsigned int i,j;             
+  13          
+  14          void main()                           
+  15            {
+  16   1          P3=0xC0;
+  17   1          P2=0xC0;
+  18   1           NR=1; NY=1; NG=0; NGL=1;       
+  19   1           SR=1; SY=1; SG=0; SGL=1;         
+  20   1           ER=0; EY=1; EG=1; EGL=1;        
+  21   1           WER=0; WEY=1; WEG=1; WEGL=1;   
+  22   1            {
+  23   2             count1();                            
+  24   2            }
+  25   1           NR=1; NY=1; NG=0; NGL=1;    
+  26   1           SR=1; SY=1; SG=0; SGL=1;      
+  27   1           ER=1; EY=0; EG=1; EGL=1;     
+  28   1           WER=1; WEY=0; WEG=1; WEGL=1;
+  29   1            {
+  30   2             count2();                         
+  31   2            }
+  32   1           NR=0; NY=1; NG=1; NGL=1;      
+  33   1           SR=0; SY=1; SG=1; SGL=1;       
+  34   1           ER=1; EY=1; EG=0; EGL=1;     
+  35   1           WER=1; WEY=1; WEG=0; WEGL=1;
+  36   1            {
+  37   2             count1();
+  38   2            }
+  39   1           NR=1; NY=0; NG=1; NGL=1;     
+  40   1           SR=1; SY=0; SG=1; SGL=1;
+  41   1           ER=1; EY=1; EG=0; EGL=1;      
+  42   1           WER=1; WEY=1; WEG=0; WEGL=1;
+  43   1             {
+  44   2             count2();
+  45   2             }
+  46   1           
+  47   1             
+  48   1           }
+  49            void count1(void)     //Sub routine for displaying numbers in segments for red signal
+  50              {
+  51   1          for(j=1;j>=0;j--)
+  52   1            {
+  53   2              P3=b[j];
+  54   2             for(i=9;i>=0;i--)
+C51 COMPILER V9.57.0.0   TRAFFIC                                                           02/27/2018 11:51:44 PAGE 2   
+
+  55   2             {
+  56   3              P2=a[i];
+  57   3              delay(100);
+  58   3              }
+  59   2            }
+  60   1          }
+  61            void count2(void) //Sub routine for displaying numbers in segments for yellow signal
+  62              {
+  63   1            delay(300);
+  64   1          }
+  65            void delay(unsigned int time)   {   //Sub routine for creating delay
+  66   1          
+  67   1            for(i=0;i<time;i++)     //Creating delay using number count
+  68   1             {
+  69   2               for(j=0;j<1275;j++);
+  70   2             }
+  71   1          }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    265    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     21    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

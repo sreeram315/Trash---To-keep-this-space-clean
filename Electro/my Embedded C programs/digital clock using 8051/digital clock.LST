@@ -1,0 +1,242 @@
+C51 COMPILER V9.52.0.0   DIGITAL_CLOCK                                                     10/15/2014 13:19:56 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE DIGITAL_CLOCK
+OBJECT MODULE PLACED IN digital clock.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE digital clock.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          
+   2          #include<reg51.h>
+   3          #include<absacc.h>
+   4          #define dataport P2
+   5          #define port P1
+   6          #define lcdport P3
+   7           sbit reset = port^0;
+   8           sbit rs =port^1;
+   9           sbit rw =port^2;
+  10           sbit e = port^3;
+  11           sbit dig_hr1=port^4;
+  12           sbit dig_min1=port^5;
+  13           sbit start=port^6;
+  14           int  min1=0,hr1=0;
+  15           int min0=60,hr0=25;
+  16           unsigned char temp=60,hr,min,sec,num[60]={0x00,0x01,0x02,
+  17             0x03,0x04,0x05,0x06,0x07,0x08,0X09,0X10,0X11,0X12,0X13,
+  18             0X14,0X15,0X16,0X17,0X18,0X19,0X20,0X21,0X22,0X23,0X24,
+  19             0X25,0X26,0X27,0X28,0X29,0X30,0X31,0X32,0X33,0X34,0X35,
+  20             0X36,0X37,0X38,0X39,0X40,0X41,0X42,0X43,0X44,0X45,0X46,
+  21             0X47,0X48,0X49,0X50,0X51,0X52,0X53,0X54,0X55,0X56,0X57,
+  22             0X58,0X59};
+  23          
+  24           void delay(unsigned int msec )
+  25          {
+  26   1        int i ,j ;
+  27   1        for(i=0;i<msec;i++)
+  28   1        for(j=0; j<1275; j++);
+  29   1      }
+  30          
+  31          void lcd_cmd(unsigned char item)
+  32          {
+  33   1        dataport = item;
+  34   1        rs= 0;
+  35   1        rw=0;
+  36   1        e=1;
+  37   1        delay(1);
+  38   1        e=0;
+  39   1        return;
+  40   1      } 
+  41          
+  42          // function to send data
+  43          void lcd_data(unsigned char item)
+  44          {
+  45   1        dataport = item;
+  46   1        rs= 1;
+  47   1        rw=0;
+  48   1        e=1;
+  49   1        delay(1);
+  50   1        e=0;
+  51   1        return;
+  52   1      }
+  53          
+  54          void lcd_string(unsigned char *str)
+  55          {
+C51 COMPILER V9.52.0.0   DIGITAL_CLOCK                                                     10/15/2014 13:19:56 PAGE 2   
+
+  56   1        int i=0;
+  57   1        while(str[i]!='\0')
+  58   1        {
+  59   2          lcd_data(str[i]);
+  60   2          i++;
+  61   2          delay(1);
+  62   2        }
+  63   1        return; 
+  64   1      }
+  65          
+  66          lcd_int(int time_val)
+  67          {
+  68   1        int int_amt;
+  69   1        int_amt=time_val/10;
+  70   1        lcd_data(int_amt+48);
+  71   1        int_amt=time_val%10;   
+  72   1        lcd_data(int_amt+48);
+  73   1      }
+  74          
+  75          
+  76          void lcd()
+  77          {
+  78   1        lcd_cmd(0x38);       
+  79   1        delay(5);
+  80   1        lcd_cmd(0x0C);        
+  81   1        delay(5);
+  82   1        lcd_cmd(0x80);
+  83   1        delay(5);
+  84   1      }
+  85          
+  86          void set_rtc_time()  
+  87          {
+  88   1        XBYTE[10]=0x20;
+  89   1        XBYTE[11]=0x82;
+  90   1        XBYTE[0]=0x00;
+  91   1        XBYTE[2]=min;
+  92   1        XBYTE[4]=hr;
+  93   1        XBYTE[7]=0x01;
+  94   1        XBYTE[8]=0x01;
+  95   1        XBYTE[9]=0x10;
+  96   1        XBYTE[1]=0xFF;
+  97   1        XBYTE[3]=0xFF;
+  98   1        XBYTE[5]=0xFF;
+  99   1        XBYTE[11]=0x22;
+ 100   1      }
+ 101          
+ 102          void set_hr1()
+ 103          {
+ 104   1        hr1++;
+ 105   1        if(hr1>23)
+ 106   1        hr1=0;
+ 107   1        lcd_cmd(0xc3);
+ 108   1        lcd_int(hr1);
+ 109   1        lcd_data(':');
+ 110   1        hr0=hr1;
+ 111   1      }
+ 112          
+ 113          void set_min1()
+ 114          {
+ 115   1        min1++;
+ 116   1        if(min1>59)
+ 117   1        min1=0;
+C51 COMPILER V9.52.0.0   DIGITAL_CLOCK                                                     10/15/2014 13:19:56 PAGE 3   
+
+ 118   1        lcd_cmd(0xc6);
+ 119   1        lcd_int(min1);
+ 120   1        min0=min1;
+ 121   1      }
+ 122          
+ 123          void set_time() interrupt 2
+ 124          {
+ 125   1        lcd_cmd(0x01);
+ 126   1        if(start==0)
+ 127   1        {
+ 128   2          lcd_string("SET TIMING");
+ 129   2          lcd_cmd(0xc3);
+ 130   2          lcd_int(hr1);
+ 131   2          lcd_data(':');
+ 132   2          lcd_int(min1);
+ 133   2          while(start==0)
+ 134   2          {
+ 135   3            delay(10);
+ 136   3            if(dig_hr1==0)
+ 137   3            set_hr1();
+ 138   3            if(dig_min1==0)
+ 139   3            set_min1();  
+ 140   3          }
+ 141   2        }
+ 142   1        lcd_cmd(0x01);
+ 143   1        hr=num[hr1];
+ 144   1        min=num[min1];
+ 145   1        set_rtc_time();
+ 146   1        lcd_cmd(0x80);
+ 147   1        lcd_string("TIME:");
+ 148   1        hr0=25;
+ 149   1        min0=60;
+ 150   1      }
+ 151          
+ 152          bcdconv(unsigned char mybyte)
+ 153          {
+ 154   1        unsigned char x,y;
+ 155   1        x=  mybyte & 0x0F;
+ 156   1        x=x | 0x30;
+ 157   1        y= mybyte & 0xF0;
+ 158   1        y=y>>4;
+ 159   1        y=y | 0x30;
+ 160   1        lcd_data(y);
+ 161   1        lcd_data(x);
+ 162   1      }
+ 163          
+ 164          void read_rtc_display() 
+ 165          { 
+ 166   1      
+ 167   1        XBYTE[11]=0x02;
+ 168   1        hr=XBYTE[4];
+ 169   1        lcd_cmd(0x85);
+ 170   1        //if(hr!=hr0)
+ 171   1        {
+ 172   2          bcdconv(hr);
+ 173   2          lcd_data(':');
+ 174   2          hr0=hr;
+ 175   2        }
+ 176   1        
+ 177   1        min=XBYTE[2];
+ 178   1      
+ 179   1        //if(min!=min0)
+C51 COMPILER V9.52.0.0   DIGITAL_CLOCK                                                     10/15/2014 13:19:56 PAGE 4   
+
+ 180   1        {
+ 181   2          bcdconv(min);
+ 182   2          lcd_data(':');
+ 183   2          //min0=min;
+ 184   2        }
+ 185   1          sec=XBYTE[0];
+ 186   1        
+ 187   1        //if(sec!=temp)
+ 188   1        {
+ 189   2          bcdconv(sec);
+ 190   2          //temp=sec;
+ 191   2        }
+ 192   1      }
+ 193          
+ 194          void main()
+ 195          {
+ 196   1        reset=1;
+ 197   1        lcd();
+ 198   1        XBYTE[10]=0x20;
+ 199   1        XBYTE[1]=0xFF;
+ 200   1        XBYTE[3]=0xFF;
+ 201   1        XBYTE[5]=0xFF;
+ 202   1        XBYTE[11]=0x02;
+ 203   1        lcd_cmd(0x01);
+ 204   1        IE=0x84;
+ 205   1        lcd_cmd(0x80);
+ 206   1        lcd_string("TIME:");
+ 207   1        while(1)
+ 208   1        {
+ 209   2          read_rtc_display();
+ 210   2        }
+ 211   1      }
+*** WARNING C290 IN LINE 73 OF digital clock.c: missing return value
+*** WARNING C290 IN LINE 162 OF digital clock.c: missing return value
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    618    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     72       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)

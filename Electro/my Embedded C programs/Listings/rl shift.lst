@@ -1,0 +1,35 @@
+C51 COMPILER V9.57.0.0   RL_SHIFT                                                          03/01/2018 22:56:41 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE RL_SHIFT
+OBJECT MODULE PLACED IN .\Objects\rl shift.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE rl shift.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -rl shift.lst) TABS(2) OBJECT(.\Objects\rl shift.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void delay(unsigned int time){
+   3   1        unsigned char i,j;
+   4   1        for(i=0;i<time;i++)
+   5   1        for(j=0;j<1275;j++);}
+   6          
+   7          void main(void){
+   8   1        code unsigned char mynum[]="ABCDEF";
+   9   1        unsigned char z;
+  10   1        for(z=0;z<=6;z++){
+  11   2          P1=mynum[z];}}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     42    ----
+   CONSTANT SIZE    =      7    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

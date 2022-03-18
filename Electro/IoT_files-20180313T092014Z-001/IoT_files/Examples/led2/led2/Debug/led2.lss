@@ -1,0 +1,158 @@
+
+led2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000009c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  0000009c  00000110  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .stab         000006cc  00000000  00000000  00000110  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  000007dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000080  00000000  00000000  00000868  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000003ca  00000000  00000000  000008e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000116  00000000  00000000  00000cb2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000334  00000000  00000000  00000dc8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  000010fc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000000e0  00000000  00000000  00001120  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000024  00000000  00000000  00001200  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ec e9       	ldi	r30, 0x9C	; 156
+  3a:	f0 e0       	ldi	r31, 0x00	; 0
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+  42:	a0 36       	cpi	r26, 0x60	; 96
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a0 36       	cpi	r26, 0x60	; 96
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	02 d0       	rcall	.+4      	; 0x5e <main>
+  5a:	1e c0       	rjmp	.+60     	; 0x98 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <main>:
+#include <util/delay.h>
+
+int main(void)
+{
+	int i;
+	DDRB = 0b11111111;	// For OUTPUT direction
+  5e:	8f ef       	ldi	r24, 0xFF	; 255
+  60:	87 bb       	out	0x17, r24	; 23
+    while(1)			// infinite loop
+    {
+        for (i=3;i>=0;i--)					//loop to shift LED for 0 to 3 
+  62:	83 e0       	ldi	r24, 0x03	; 3
+  64:	90 e0       	ldi	r25, 0x00	; 0
+        {
+			PORTB = (1<<i);					// led shifting
+  66:	41 e0       	ldi	r20, 0x01	; 1
+  68:	50 e0       	ldi	r21, 0x00	; 0
+{
+	int i;
+	DDRB = 0b11111111;	// For OUTPUT direction
+    while(1)			// infinite loop
+    {
+        for (i=3;i>=0;i--)					//loop to shift LED for 0 to 3 
+  6a:	63 e0       	ldi	r22, 0x03	; 3
+  6c:	70 e0       	ldi	r23, 0x00	; 0
+        {
+			PORTB = (1<<i);					// led shifting
+  6e:	9a 01       	movw	r18, r20
+  70:	08 2e       	mov	r0, r24
+  72:	02 c0       	rjmp	.+4      	; 0x78 <main+0x1a>
+  74:	22 0f       	add	r18, r18
+  76:	33 1f       	adc	r19, r19
+  78:	0a 94       	dec	r0
+  7a:	e2 f7       	brpl	.-8      	; 0x74 <main+0x16>
+  7c:	28 bb       	out	0x18, r18	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  7e:	0f e3       	ldi	r16, 0x3F	; 63
+  80:	1d e0       	ldi	r17, 0x0D	; 13
+  82:	23 e0       	ldi	r18, 0x03	; 3
+  84:	01 50       	subi	r16, 0x01	; 1
+  86:	10 40       	sbci	r17, 0x00	; 0
+  88:	20 40       	sbci	r18, 0x00	; 0
+  8a:	e1 f7       	brne	.-8      	; 0x84 <main+0x26>
+  8c:	00 c0       	rjmp	.+0      	; 0x8e <main+0x30>
+  8e:	00 00       	nop
+{
+	int i;
+	DDRB = 0b11111111;	// For OUTPUT direction
+    while(1)			// infinite loop
+    {
+        for (i=3;i>=0;i--)					//loop to shift LED for 0 to 3 
+  90:	01 97       	sbiw	r24, 0x01	; 1
+  92:	6a f7       	brpl	.-38     	; 0x6e <main+0x10>
+  94:	cb 01       	movw	r24, r22
+  96:	eb cf       	rjmp	.-42     	; 0x6e <main+0x10>
+
+00000098 <_exit>:
+  98:	f8 94       	cli
+
+0000009a <__stop_program>:
+  9a:	ff cf       	rjmp	.-2      	; 0x9a <__stop_program>

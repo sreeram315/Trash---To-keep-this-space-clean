@@ -1,0 +1,355 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/01/2018  20:22:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\send values.obj, .\Objects\bit wise valuse giving.obj, .\Ob
+>> jects\toggle.obj, .\Objects\sending code to port.obj, .\Objects\taking and giving from port.obj, .\Objects\7 seg.obj,
+>>  .\Objects\prac.obj TO .\Objects\seend values PRINT (.\Listings\seend values.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\send values.obj (SEND_VALUES)
+  .\Objects\bit wise valuse giving.obj (BIT_WISE_VALUSE_GIVING)
+  .\Objects\toggle.obj (TOGGLE)
+  .\Objects\sending code to port.obj (SENDING_CODE_TO_PORT)
+  .\Objects\taking and giving from port.obj (TAKING_AND_GIVING_FROM_PORT)
+  .\Objects\7 seg.obj (7_SEG)
+  .\Objects\prac.obj (PRAC)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\seend values (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000CH     UNIT         ?DT?MAIN?7_SEG
+            DATA    0014H     000AH     UNIT         ?DT?_MAIN?SEND_VALUES
+            DATA    001EH     0002H     UNIT         ?DT?_DELAY?TAKING_AND_GIVING_FROM_PORT
+            DATA    0020H     0001H     UNIT         ?DT?TAKING_AND_GIVING_FROM_PORT
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+* OVERLAP * CODE    0000H     0015H     ABSOLUTE     
+                    0015H     07EBH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     0031H     UNIT         ?PR?MAIN?7_SEG
+            CODE    0927H     0027H     UNIT         ?PR?_DELAY?TAKING_AND_GIVING_FROM_PORT
+            CODE    094EH     0025H     UNIT         ?PR?_MAIN?SEND_VALUES
+            CODE    0973H     0021H     UNIT         ?PR?_DELAY?BIT_WISE_VALUSE_GIVING
+            CODE    0994H     0020H     UNIT         ?PR?_MSDELAY?7_SEG
+            CODE    09B4H     001CH     UNIT         ?PR?_DELAY?SENDING_CODE_TO_PORT
+            CODE    09D0H     0013H     UNIT         ?PR?MAIN?TAKING_AND_GIVING_FROM_PORT
+            CODE    09E3H     0012H     UNIT         ?PR?MAIN?SENDING_CODE_TO_PORT
+            CODE    09F5H     0010H     UNIT         ?PR?MAIN?BIT_WISE_VALUSE_GIVING
+            CODE    0A05H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0A11H     000CH     UNIT         ?CO?7_SEG
+            CODE    0A1DH     0008H     UNIT         ?CO?SEND_VALUES
+            CODE    0A25H     0004H     UNIT         ?PR?MAIN?PRAC
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\seend values (?C_STARTUP)
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2018  20:22:38  PAGE 2
+
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?BIT_WISE_VALUSE_GIVING
+
+?PR?MAIN?BIT_WISE_VALUSE_GIVING
+  +--> ?PR?_DELAY?BIT_WISE_VALUSE_GIVING
+
+
+
+IGNORED SYMBOLS:
+   MAIN
+   _DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\seend values (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0A05H         SEGMENT       ?C_C51STARTUP
+  I:0021H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0A08H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0A05H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0A05H         LINE#         133
+  C:0A07H         LINE#         134
+  C:0A08H         LINE#         135
+  C:0A09H         LINE#         136
+  C:0A0BH         LINE#         185
+  C:0A0EH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2018  20:22:38  PAGE 3
+
+
+  -------         MODULE        SEND_VALUES
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:094EH         PUBLIC        _main
+  C:0A1DH         SYMBOL        _?ix1000
+  -------         PROC          _MAIN
+  D:0014H         SYMBOL        coid
+  -------         DO            
+  D:0016H         SYMBOL        mynum
+  D:0007H         SYMBOL        z
+  -------         ENDDO         
+  C:094EH         LINE#         2
+  C:0952H         LINE#         3
+  C:0965H         LINE#         5
+  C:0967H         LINE#         6
+  C:096EH         LINE#         7
+  C:0972H         LINE#         8
+  -------         ENDPROC       _MAIN
+  -------         ENDMOD        SEND_VALUES
+
+  -------         MODULE        BIT_WISE_VALUSE_GIVING
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0973H         PUBLIC        _delay
+  C:09F5H         PUBLIC        main
+  B:0090H.1       PUBLIC        mybit
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        z
+  -------         ENDDO         
+  C:0973H         LINE#         3
+  C:0973H         LINE#         5
+  C:0981H         LINE#         6
+  C:0993H         LINE#         8
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:09F5H         LINE#         9
+  C:09F5H         LINE#         12
+  C:09F5H         LINE#         13
+  C:09F7H         LINE#         14
+  C:09FEH         LINE#         15
+  C:0A00H         LINE#         16
+  C:0A03H         LINE#         17
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BIT_WISE_VALUSE_GIVING
+
+  -------         MODULE        TOGGLE
+  C:000CH         SYMBOL        DELAY
+  C:0000H         SYMBOL        L1
+  C:0010H         SYMBOL        L2
+  C:000EH         SYMBOL        L3
+  D:00A0H         SYMBOL        P2
+  C:0000H         LINE#         2
+  C:0003H         LINE#         3
+  C:0005H         LINE#         4
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2018  20:22:38  PAGE 4
+
+
+  C:0008H         LINE#         5
+  C:000AH         LINE#         6
+  C:000CH         LINE#         9
+  C:000EH         LINE#         10
+  C:0010H         LINE#         11
+  C:0012H         LINE#         12
+  C:0014H         LINE#         13
+  -------         ENDMOD        TOGGLE
+
+  -------         MODULE        SENDING_CODE_TO_PORT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:09B4H         PUBLIC        _delay
+  C:09E3H         PUBLIC        main
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        z
+  -------         ENDDO         
+  C:09B4H         LINE#         2
+  C:09B4H         LINE#         4
+  C:09BDH         LINE#         5
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  C:09E3H         SYMBOL        A
+  -------         ENDDO         
+  C:09E3H         LINE#         6
+  C:09E3H         LINE#         7
+  C:09E6H         LINE#         8
+  C:09EDH         LINE#         9
+  C:09F0H         LINE#         10
+  C:09F3H         LINE#         11
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SENDING_CODE_TO_PORT
+
+  -------         MODULE        TAKING_AND_GIVING_FROM_PORT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0927H         PUBLIC        _delay
+  D:0020H         PUBLIC        mybyte
+  C:09D0H         PUBLIC        main
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:001EH         SYMBOL        j
+  -------         ENDDO         
+  C:0927H         LINE#         2
+  C:0927H         LINE#         4
+  C:0931H         LINE#         5
+  C:094DH         LINE#         6
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:09D0H         LINE#         8
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2018  20:22:38  PAGE 5
+
+
+  C:09D0H         LINE#         9
+  C:09D3H         LINE#         10
+  C:09D6H         LINE#         11
+  C:09DDH         LINE#         12
+  C:09E0H         LINE#         13
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TAKING_AND_GIVING_FROM_PORT
+
+  -------         MODULE        7_SEG
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:08F6H         PUBLIC        main
+  C:0A11H         SYMBOL        _?ix1000
+  C:0994H         PUBLIC        _msdelay
+  -------         PROC          _MSDELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0994H         LINE#         3
+  C:0994H         LINE#         4
+  C:0994H         LINE#         6
+  C:099EH         LINE#         7
+  C:09B3H         LINE#         8
+  -------         ENDPROC       _MSDELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        no_code
+  D:0082H         SYMBOL        k
+  -------         ENDDO         
+  C:08F6H         LINE#         10
+  C:08F6H         LINE#         11
+  C:08F6H         LINE#         12
+  C:0909H         LINE#         14
+  C:0909H         LINE#         15
+  C:0909H         LINE#         16
+  C:090CH         LINE#         17
+  C:090CH         LINE#         18
+  C:0915H         LINE#         19
+  C:091CH         LINE#         20
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        7_SEG
+
+  -------         MODULE        PRAC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:0A25H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0A25H         LINE#         3
+  C:0A25H         LINE#         4
+  C:0A28H         LINE#         6
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        PRAC
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/01/2018  20:22:38  PAGE 6
+
+
+  -------         ENDMOD        ?C?COPY
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\sending code to port.obj (SENDING_CODE_TO_PORT)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  .\Objects\sending code to port.obj (SENDING_CODE_TO_PORT)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\taking and giving from port.obj (TAKING_AND_GIVING_FROM_PORT)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  .\Objects\taking and giving from port.obj (TAKING_AND_GIVING_FROM_PORT)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\7 seg.obj (7_SEG)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\prac.obj (PRAC)
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_MAIN?SEND_VALUES
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?SENDING_CODE_TO_PORT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?TAKING_AND_GIVING_FROM_PORT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?7_SEG
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?PRAC
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      0002H
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 014BH BYTE (16%) *
+******************************************************************************
+
+Program Size: data=34.0 xdata=0 code=577
+LINK/LOCATE RUN COMPLETE.  6 WARNING(S),  6 ERROR(S)

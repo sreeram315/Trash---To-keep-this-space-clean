@@ -1,0 +1,37 @@
+C51 COMPILER V9.57.0.0   TOGGLE_USING_INVERTER                                             03/01/2018 20:35:54 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE TOGGLE_USING_INVERTER
+OBJECT MODULE PLACED IN .\Objects\toggle using inverter.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE toggle using inverter.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRIN
+                    -T(.\Listings\toggle using inverter.lst) TABS(2) OBJECT(.\Objects\toggle using inverter.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void delay(unsigned int time){
+   3   1        unsigned char i,j;
+   4   1        for(i=0;i<time;i++)
+   5   1        for(j=0;j<1275;j++);}
+   6          void main(void){
+   7   1        while(1){
+   8   2        P0=0x55;
+   9   2        delay(100);
+  10   2        P0=0xAA;
+  11   2        delay(100);}
+  12   1      }
+  13            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     46    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,55 @@
+C51 COMPILER V9.57.0.0   TEST_ADC                                                          03/10/2018 23:57:28 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE TEST_ADC
+OBJECT MODULE PLACED IN .\Objects\test_ADC.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE test_ADC.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -test_ADC.lst) TABS(2) OBJECT(.\Objects\test_ADC.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<stdio.h>
+   3          sbit chip_select= P0^0;
+   4          sbit rd_adc = P0^1;
+   5          sbit wr_adc = P0^2;
+   6          sbit intr_adc = P0^3;
+   7          
+   8          void delay(unsigned char time)
+   9          {
+  10   1        int i,j;
+  11   1        for(i=0;i<time;i++)
+  12   1        for(j=0;j<1275;j++);
+  13   1      }
+  14          
+  15          void main()
+  16          {
+  17   1        intr_adc =1;
+  18   1        rd_adc = 1;
+  19   1        wr_adc = 1;
+  20   1        while(1)
+  21   1        {
+  22   2          wr_adc = 0;
+  23   2          delay(1);
+  24   2          wr_adc = 1;
+  25   2          while(intr_adc==1);
+  26   2          rd_adc = 0;
+  27   2          delay(1000);
+  28   2          rd_adc = 1;
+  29   2          intr_adc=1;
+  30   2        }
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     68    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

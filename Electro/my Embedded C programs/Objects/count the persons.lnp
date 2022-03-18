@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\pir.obj" 
+TO ".\Objects\count the persons" 
+PRINT(".\Listings\count the persons.m51") RAMSIZE(256) 

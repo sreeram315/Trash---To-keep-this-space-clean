@@ -1,0 +1,3 @@
+".\Objects\7 seg.obj" 
+TO ".\Objects\7 seg interfacing" 
+PRINT(".\Listings\7 seg interfacing.m51") RAMSIZE(256) 

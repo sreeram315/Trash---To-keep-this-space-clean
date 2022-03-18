@@ -1,0 +1,10 @@
+high  d9 11011001
+
+low  ff 11111111
+
+
+
+
+for at mega 16
+
+high   87 10000111

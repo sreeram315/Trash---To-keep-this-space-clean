@@ -1,0 +1,510 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/20/2018  21:33:46  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\thermos.obj, .\Objects\ultraonic intering.obj TO .\Objects\
+>> Digital thermometer PRINT (.\Listings\Digital thermometer.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\thermos.obj (THERMOS)
+  .\Objects\ultraonic intering.obj (ULTRAONIC_INTERING)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?SIDIV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?SLCMP)
+
+
+LINK MAP OF MODULE:  .\Objects\Digital thermometer (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0010H     UNIT         _DATA_GROUP_
+            DATA    0018H     0003H     UNIT         ?DT?_LCD_STRING?ULTRAONIC_INTERING
+            DATA    001BH     0002H     UNIT         ?DT?THERMOS
+            DATA    001DH     0002H     UNIT         ?DT?MAIN?ULTRAONIC_INTERING
+            DATA    001FH     0002H     UNIT         ?DT?ULTRAONIC_INTERING
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     01C4H     UNIT         ?C?LIB_CODE
+            CODE    09C4H     009CH     UNIT         ?PR?MAIN?ULTRAONIC_INTERING
+            CODE    0A60H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0AECH     005EH     UNIT         ?PR?MAIN?THERMOS
+            CODE    0B4AH     0031H     UNIT         ?PR?_CONVERTPRINT?THERMOS
+            CODE    0B7BH     0030H     UNIT         ?PR?_DELAY?THERMOS
+            CODE    0BABH     0030H     UNIT         ?PR?_DELAY?ULTRAONIC_INTERING
+            CODE    0BDBH     002EH     UNIT         ?CO?ULTRAONIC_INTERING
+            CODE    0C09H     002AH     UNIT         ?PR?_LCD_STRING?ULTRAONIC_INTERING
+            CODE    0C33H     0019H     UNIT         ?PR?LCD_INI?THERMOS
+            CODE    0C4CH     0019H     UNIT         ?PR?LCD_INI?ULTRAONIC_INTERING
+            CODE    0C65H     0013H     UNIT         ?PR?_LCD_DATA?ULTRAONIC_INTERING
+            CODE    0C78H     000EH     UNIT         ?CO?THERMOS
+            CODE    0C86H     000DH     UNIT         ?PR?TRIGGER?ULTRAONIC_INTERING
+            CODE    0C93H     000BH     UNIT         ?PR?_10USDELAY?ULTRAONIC_INTERING
+            CODE    0C9EH     0008H     UNIT         ?PR?_LCD_CMD?THERMOS
+            CODE    0CA6H     0008H     UNIT         ?PR?_LCD_DATA?THERMOS
+            CODE    0CAEH     0008H     UNIT         ?PR?_LCD_CMD?ULTRAONIC_INTERING
+            CODE    0CB6H     0006H     UNIT         ?PR?COUNT?ULTRAONIC_INTERING
+            CODE    0CBCH     0004H     UNIT         ?C_INITSEG
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/20/2018  21:33:46  PAGE 2
+
+
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Digital thermometer (?C_STARTUP)
+
+
+SEGMENT                                      DATA_GROUP 
+  +--> CALLED SEGMENT                      START    LENGTH
+----------------------------------------------------------
+?C_C51STARTUP                              -----    -----
+  +--> ?PR?MAIN?THERMOS
+  +--> ?C_INITSEG
+
+?PR?MAIN?THERMOS                           0008H    000FH
+  +--> ?CO?THERMOS
+  +--> ?PR?LCD_INI?THERMOS
+  +--> ?PR?_LCD_DATA?THERMOS
+  +--> ?PR?_DELAY?THERMOS
+  +--> ?PR?_CONVERTPRINT?THERMOS
+
+?PR?LCD_INI?THERMOS                        -----    -----
+  +--> ?PR?_LCD_CMD?THERMOS
+
+?PR?_LCD_CMD?THERMOS                       -----    -----
+  +--> ?PR?_DELAY?THERMOS
+
+?PR?_LCD_DATA?THERMOS                      -----    -----
+  +--> ?PR?_DELAY?THERMOS
+
+?PR?_CONVERTPRINT?THERMOS                  0017H    0001H
+  +--> ?PR?_LCD_CMD?THERMOS
+  +--> ?PR?_LCD_DATA?THERMOS
+
+
+
+IGNORED SYMBOLS:
+   I
+   J
+   LCD_INI
+   MAIN
+   _DELAY
+   _LCD_CMD
+   _LCD_DATA
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Digital thermometer (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0A60H         SEGMENT       ?C_C51STARTUP
+  I:0021H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/20/2018  21:33:46  PAGE 3
+
+
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0A63H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0A60H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0A60H         LINE#         133
+  C:0A62H         LINE#         134
+  C:0A63H         LINE#         135
+  C:0A64H         LINE#         136
+  C:0A66H         LINE#         185
+  C:0A69H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        THERMOS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:0080H.1       PUBLIC        rw_lcd
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  B:0080H.3       PUBLIC        chip_select
+  C:0B85H         PUBLIC        _delay
+  C:0AECH         PUBLIC        main
+  C:0CA6H         PUBLIC        _lcd_data
+  C:0B4AH         PUBLIC        _convertprint
+  B:0080H.6       PUBLIC        intr
+  C:0C78H         SYMBOL        _?ix1000
+  C:0C9EH         PUBLIC        _lcd_cmd
+  C:0C33H         PUBLIC        lcd_ini
+  B:0080H.4       PUBLIC        rd_adc
+  D:001BH         PUBLIC        i
+  B:0080H.0       PUBLIC        en_lcd
+  D:001CH         PUBLIC        j
+  B:0080H.5       PUBLIC        wr_adc
+  B:0080H.2       PUBLIC        rs_lcd
+  C:0B81H         SYMBOL        L?0023
+  -------         PROC          L?0022
+  -------         ENDPROC       L?0022
+  C:0B81H         SYMBOL        L?0023
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/20/2018  21:33:46  PAGE 4
+
+
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0B85H         LINE#         12
+  C:0B85H         LINE#         13
+  C:0B85H         LINE#         15
+  C:0B95H         LINE#         16
+  C:0BAAH         LINE#         17
+  -------         ENDPROC       _DELAY
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        x
+  C:0C9EH         LINE#         18
+  C:0C9EH         LINE#         19
+  C:0C9EH         LINE#         20
+  C:0CA0H         LINE#         21
+  C:0CA0H         LINE#         22
+  C:0CA0H         LINE#         23
+  C:0CA0H         LINE#         24
+  C:0CA3H         LINE#         25
+  C:0CA5H         LINE#         26
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          LCD_INI
+  C:0C33H         LINE#         28
+  C:0C33H         LINE#         29
+  C:0C33H         LINE#         30
+  C:0C38H         LINE#         31
+  C:0C3DH         LINE#         32
+  C:0C42H         LINE#         33
+  C:0C47H         LINE#         34
+  -------         ENDPROC       LCD_INI
+  -------         PROC          _LCD_DATA
+  D:0007H         SYMBOL        x
+  C:0CA6H         LINE#         37
+  C:0CA6H         LINE#         38
+  C:0CA6H         LINE#         39
+  C:0CA8H         LINE#         40
+  C:0CA8H         LINE#         41
+  C:0CA8H         LINE#         42
+  C:0CA8H         LINE#         43
+  C:0CABH         LINE#         44
+  C:0CADH         LINE#         45
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _CONVERTPRINT
+  D:0001H         SYMBOL        x
+  -------         DO            
+  D:0006H         SYMBOL        x1
+  D:0001H         SYMBOL        x2
+  D:0017H         SYMBOL        x3
+  -------         ENDDO         
+  C:0B4AH         LINE#         47
+  C:0B4CH         LINE#         48
+  C:0B4CH         LINE#         50
+  C:0B51H         LINE#         51
+  C:0B56H         LINE#         52
+  C:0B59H         LINE#         53
+  C:0B60H         LINE#         54
+  C:0B64H         LINE#         55
+  C:0B67H         LINE#         56
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/20/2018  21:33:46  PAGE 5
+
+
+  C:0B6CH         LINE#         57
+  C:0B71H         LINE#         58
+  C:0B76H         LINE#         59
+  -------         ENDPROC       _CONVERTPRINT
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        value
+  D:0009H         SYMBOL        a
+  -------         ENDDO         
+  C:0AECH         LINE#         62
+  C:0AECH         LINE#         63
+  C:0AECH         LINE#         66
+  C:0AFFH         LINE#         67
+  C:0B01H         LINE#         68
+  C:0B04H         LINE#         69
+  C:0B07H         LINE#         70
+  C:0B0AH         LINE#         71
+  C:0B0DH         LINE#         72
+  C:0B0FH         LINE#         73
+  C:0B0FH         LINE#         74
+  C:0B19H         LINE#         75
+  C:0B1CH         LINE#         76
+  C:0B25H         LINE#         77
+  C:0B27H         LINE#         78
+  C:0B29H         LINE#         79
+  C:0B2BH         LINE#         80
+  C:0B2BH         LINE#         81
+  C:0B2BH         LINE#         82
+  C:0B2DH         LINE#         83
+  C:0B30H         LINE#         84
+  C:0B32H         LINE#         85
+  C:0B35H         LINE#         86
+  C:0B37H         LINE#         87
+  C:0B3AH         LINE#         88
+  C:0B3FH         LINE#         89
+  C:0B46H         LINE#         90
+  C:0B48H         LINE#         91
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        THERMOS
+
+  -------         MODULE        ULTRAONIC_INTERING
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0BB5H         PUBLIC        _delay
+  B:0080H.1       PUBLIC        echo
+  C:09C4H         PUBLIC        main
+  C:0CB6H         PUBLIC        count
+  C:0C09H         PUBLIC        _lcd_string
+  C:0C70H         PUBLIC        _lcd_data
+  D:0089H         PUBLIC        TMOD
+  B:0080H.0       PUBLIC        trig
+  D:0082H         PUBLIC        DPTR
+  C:0C93H         PUBLIC        _10usdelay
+  C:0CAEH         PUBLIC        _lcd_cmd
+  D:008CH         PUBLIC        TH0
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/20/2018  21:33:46  PAGE 6
+
+
+  D:008AH         PUBLIC        TL0
+  B:0090H.0       PUBLIC        en
+  C:0C4CH         PUBLIC        lcd_ini
+  B:0088H.4       PUBLIC        TR0
+  D:0083H         PUBLIC        DPH
+  D:0082H         PUBLIC        DPL
+  B:0090H.2       PUBLIC        rs
+  D:001FH         PUBLIC        i
+  D:0020H         PUBLIC        j
+  B:0090H.1       PUBLIC        rw
+  C:0C86H         PUBLIC        trigger
+  -------         PROC          L?0029
+  -------         ENDPROC       L?0029
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0BB5H         LINE#         9
+  C:0BB5H         LINE#         10
+  C:0BB5H         LINE#         12
+  C:0BC5H         LINE#         13
+  C:0BDAH         LINE#         14
+  -------         ENDPROC       _DELAY
+  -------         PROC          _10USDELAY
+  C:0C93H         LINE#         16
+  C:0C93H         LINE#         17
+  C:0C93H         LINE#         18
+  C:0C98H         LINE#         19
+  C:0C9DH         LINE#         20
+  -------         ENDPROC       _10USDELAY
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        x
+  C:0CAEH         LINE#         22
+  C:0CAEH         LINE#         23
+  C:0CAEH         LINE#         24
+  C:0CB0H         LINE#         25
+  C:0CB0H         LINE#         26
+  C:0CB0H         LINE#         27
+  C:0CB0H         LINE#         28
+  C:0CB3H         LINE#         29
+  C:0CB5H         LINE#         30
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          LCD_INI
+  C:0C4CH         LINE#         32
+  C:0C4CH         LINE#         33
+  C:0C4CH         LINE#         34
+  C:0C51H         LINE#         35
+  C:0C56H         LINE#         36
+  C:0C5BH         LINE#         37
+  C:0C60H         LINE#         38
+  -------         ENDPROC       LCD_INI
+  -------         PROC          L?0028
+  -------         ENDPROC       L?0028
+  -------         PROC          _LCD_DATA
+  D:0007H         SYMBOL        x
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/20/2018  21:33:46  PAGE 7
+
+
+  C:0C70H         LINE#         41
+  C:0C70H         LINE#         42
+  C:0C70H         LINE#         43
+  C:0C72H         LINE#         44
+  C:0C72H         LINE#         45
+  C:0C72H         LINE#         46
+  C:0C72H         LINE#         47
+  C:0C75H         LINE#         48
+  C:0C77H         LINE#         49
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _LCD_STRING
+  D:0018H         SYMBOL        str
+  C:0C09H         LINE#         51
+  C:0C0FH         LINE#         52
+  C:0C0FH         LINE#         53
+  C:0C12H         LINE#         54
+  C:0C24H         LINE#         55
+  C:0C24H         LINE#         56
+  C:0C27H         LINE#         57
+  C:0C2EH         LINE#         58
+  C:0C30H         LINE#         59
+  C:0C32H         LINE#         60
+  -------         ENDPROC       _LCD_STRING
+  -------         PROC          COUNT
+  C:0CB6H         LINE#         62
+  C:0CB6H         LINE#         63
+  C:0CB6H         LINE#         64
+  C:0CB9H         LINE#         65
+  C:0CBBH         LINE#         66
+  -------         ENDPROC       COUNT
+  -------         PROC          TRIGGER
+  C:0C86H         LINE#         67
+  C:0C86H         LINE#         68
+  C:0C86H         LINE#         69
+  C:0C8BH         LINE#         70
+  C:0C8DH         LINE#         71
+  C:0C90H         LINE#         72
+  C:0C92H         LINE#         73
+  -------         ENDPROC       TRIGGER
+  -------         PROC          MAIN
+  -------         DO            
+  D:001DH         SYMBOL        time
+  -------         ENDDO         
+  C:09C4H         LINE#         75
+  C:09C4H         LINE#         76
+  C:09C4H         LINE#         78
+  C:09C6H         LINE#         79
+  C:09C9H         LINE#         80
+  C:09CBH         LINE#         81
+  C:09CEH         LINE#         82
+  C:09D1H         LINE#         83
+  C:09DAH         LINE#         84
+  C:09DDH         LINE#         85
+  C:09E0H         LINE#         86
+  C:09E9H         LINE#         87
+  C:09E9H         LINE#         88
+  C:09E9H         LINE#         89
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/20/2018  21:33:46  PAGE 8
+
+
+  C:09ECH         LINE#         90
+  C:09EFH         LINE#         91
+  C:09F2H         LINE#         92
+  C:09F5H         LINE#         93
+  C:09FBH         LINE#         94
+  C:0A01H         LINE#         95
+  C:0A10H         LINE#         96
+  C:0A23H         LINE#         97
+  C:0A23H         LINE#         98
+  C:0A28H         LINE#         99
+  C:0A3AH         LINE#         100
+  C:0A48H         LINE#         101
+  C:0A4FH         LINE#         102
+  C:0A51H         LINE#         104
+  C:0A51H         LINE#         105
+  C:0A54H         LINE#         106
+  C:0A5DH         LINE#         107
+  C:0A5DH         LINE#         108
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ULTRAONIC_INTERING
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CLDOPTR
+  C:08F6H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?UIDIV
+  C:0923H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+  -------         MODULE        ?C?SIDIV
+  C:0978H         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?SLCMP
+  C:09AEH         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  J
+    MODULE:  .\Objects\ultraonic intering.obj (ULTRAONIC_INTERING)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  I
+    MODULE:  .\Objects\ultraonic intering.obj (ULTRAONIC_INTERING)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\ultraonic intering.obj (ULTRAONIC_INTERING)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _LCD_DATA
+    MODULE:  .\Objects\ultraonic intering.obj (ULTRAONIC_INTERING)
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/20/2018  21:33:46  PAGE 9
+
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  LCD_INI
+    MODULE:  .\Objects\ultraonic intering.obj (ULTRAONIC_INTERING)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _LCD_CMD
+    MODULE:  .\Objects\ultraonic intering.obj (ULTRAONIC_INTERING)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  .\Objects\ultraonic intering.obj (ULTRAONIC_INTERING)
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?ULTRAONIC_INTERING
+
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  MAIN
+    MODULE:  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 0A6DH
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 027EH BYTE (31%) *
+******************************************************************************
+
+Program Size: data=34.0 xdata=0 code=1219
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  8 ERROR(S)

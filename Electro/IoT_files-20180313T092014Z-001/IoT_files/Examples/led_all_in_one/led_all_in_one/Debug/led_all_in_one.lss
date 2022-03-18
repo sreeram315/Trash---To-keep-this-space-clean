@@ -1,0 +1,272 @@
+
+led_all_in_one.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000152  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00000152  000001c6  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .stab         000006cc  00000000  00000000  000001c8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000894  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000080  00000000  00000000  00000920  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000048b  00000000  00000000  000009a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000013f  00000000  00000000  00000e2b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000003a6  00000000  00000000  00000f6a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  00001310  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000000fe  00000000  00000000  00001334  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000ad  00000000  00000000  00001432  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000d0  00000000  00000000  000014df  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e2 e5       	ldi	r30, 0x52	; 82
+  3a:	f1 e0       	ldi	r31, 0x01	; 1
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+  42:	a0 36       	cpi	r26, 0x60	; 96
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a0 36       	cpi	r26, 0x60	; 96
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	02 d0       	rcall	.+4      	; 0x5e <main>
+  5a:	79 c0       	rjmp	.+242    	; 0x14e <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <main>:
+#include <util/delay.h>
+
+int main(void)
+{
+	int i,j;
+	DDRB = 0b11111111;									// For OUTPUT direction
+  5e:	8f ef       	ldi	r24, 0xFF	; 255
+  60:	87 bb       	out	0x17, r24	; 23
+    while(1)											// infinite loop
+    {
+		
+		PORTB = 0b00001111;								//turn ON all 4 led
+  62:	ef e0       	ldi	r30, 0x0F	; 15
+		_delay_ms(1000);								// delay of one second
+		
+		
+		for (i=0;i<=3;i++)
+		{
+			PORTB = (1<<i);								//led shifting	
+  64:	31 e0       	ldi	r19, 0x01	; 1
+  66:	22 e0       	ldi	r18, 0x02	; 2
+  68:	94 e0       	ldi	r25, 0x04	; 4
+  6a:	88 e0       	ldi	r24, 0x08	; 8
+		}
+		
+		
+        for (i=3,j=0;i>=2,j<=1;i--,j++)					//loop to shift LED for 0 to 3 
+        {
+			PORTB = (1<<i)|(1<<j);						// led shifting
+  6c:	f9 e0       	ldi	r31, 0x09	; 9
+  6e:	a6 e0       	ldi	r26, 0x06	; 6
+	int i,j;
+	DDRB = 0b11111111;									// For OUTPUT direction
+    while(1)											// infinite loop
+    {
+		
+		PORTB = 0b00001111;								//turn ON all 4 led
+  70:	e8 bb       	out	0x18, r30	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  72:	4f e3       	ldi	r20, 0x3F	; 63
+  74:	5d e0       	ldi	r21, 0x0D	; 13
+  76:	63 e0       	ldi	r22, 0x03	; 3
+  78:	41 50       	subi	r20, 0x01	; 1
+  7a:	50 40       	sbci	r21, 0x00	; 0
+  7c:	60 40       	sbci	r22, 0x00	; 0
+  7e:	e1 f7       	brne	.-8      	; 0x78 <main+0x1a>
+  80:	00 c0       	rjmp	.+0      	; 0x82 <main+0x24>
+  82:	00 00       	nop
+		_delay_ms(1000);								// delay of one second
+		
+		
+		for (i=0;i<=3;i++)
+		{
+			PORTB = (1<<i);								//led shifting	
+  84:	38 bb       	out	0x18, r19	; 24
+  86:	4f e3       	ldi	r20, 0x3F	; 63
+  88:	5d e0       	ldi	r21, 0x0D	; 13
+  8a:	63 e0       	ldi	r22, 0x03	; 3
+  8c:	41 50       	subi	r20, 0x01	; 1
+  8e:	50 40       	sbci	r21, 0x00	; 0
+  90:	60 40       	sbci	r22, 0x00	; 0
+  92:	e1 f7       	brne	.-8      	; 0x8c <main+0x2e>
+  94:	00 c0       	rjmp	.+0      	; 0x96 <main+0x38>
+  96:	00 00       	nop
+  98:	28 bb       	out	0x18, r18	; 24
+  9a:	4f e3       	ldi	r20, 0x3F	; 63
+  9c:	5d e0       	ldi	r21, 0x0D	; 13
+  9e:	63 e0       	ldi	r22, 0x03	; 3
+  a0:	41 50       	subi	r20, 0x01	; 1
+  a2:	50 40       	sbci	r21, 0x00	; 0
+  a4:	60 40       	sbci	r22, 0x00	; 0
+  a6:	e1 f7       	brne	.-8      	; 0xa0 <main+0x42>
+  a8:	00 c0       	rjmp	.+0      	; 0xaa <main+0x4c>
+  aa:	00 00       	nop
+  ac:	98 bb       	out	0x18, r25	; 24
+  ae:	4f e3       	ldi	r20, 0x3F	; 63
+  b0:	5d e0       	ldi	r21, 0x0D	; 13
+  b2:	63 e0       	ldi	r22, 0x03	; 3
+  b4:	41 50       	subi	r20, 0x01	; 1
+  b6:	50 40       	sbci	r21, 0x00	; 0
+  b8:	60 40       	sbci	r22, 0x00	; 0
+  ba:	e1 f7       	brne	.-8      	; 0xb4 <main+0x56>
+  bc:	00 c0       	rjmp	.+0      	; 0xbe <main+0x60>
+  be:	00 00       	nop
+  c0:	88 bb       	out	0x18, r24	; 24
+  c2:	4f e3       	ldi	r20, 0x3F	; 63
+  c4:	5d e0       	ldi	r21, 0x0D	; 13
+  c6:	63 e0       	ldi	r22, 0x03	; 3
+  c8:	41 50       	subi	r20, 0x01	; 1
+  ca:	50 40       	sbci	r21, 0x00	; 0
+  cc:	60 40       	sbci	r22, 0x00	; 0
+  ce:	e1 f7       	brne	.-8      	; 0xc8 <main+0x6a>
+  d0:	00 c0       	rjmp	.+0      	; 0xd2 <main+0x74>
+  d2:	00 00       	nop
+			_delay_ms(1000);								//delay of 1 second
+		}
+		
+		for (i=3;i>=0;i--)
+		{
+			PORTB = (1<<i);								//led shifting
+  d4:	88 bb       	out	0x18, r24	; 24
+  d6:	4f e3       	ldi	r20, 0x3F	; 63
+  d8:	5d e0       	ldi	r21, 0x0D	; 13
+  da:	63 e0       	ldi	r22, 0x03	; 3
+  dc:	41 50       	subi	r20, 0x01	; 1
+  de:	50 40       	sbci	r21, 0x00	; 0
+  e0:	60 40       	sbci	r22, 0x00	; 0
+  e2:	e1 f7       	brne	.-8      	; 0xdc <main+0x7e>
+  e4:	00 c0       	rjmp	.+0      	; 0xe6 <main+0x88>
+  e6:	00 00       	nop
+  e8:	98 bb       	out	0x18, r25	; 24
+  ea:	4f e3       	ldi	r20, 0x3F	; 63
+  ec:	5d e0       	ldi	r21, 0x0D	; 13
+  ee:	63 e0       	ldi	r22, 0x03	; 3
+  f0:	41 50       	subi	r20, 0x01	; 1
+  f2:	50 40       	sbci	r21, 0x00	; 0
+  f4:	60 40       	sbci	r22, 0x00	; 0
+  f6:	e1 f7       	brne	.-8      	; 0xf0 <main+0x92>
+  f8:	00 c0       	rjmp	.+0      	; 0xfa <main+0x9c>
+  fa:	00 00       	nop
+  fc:	28 bb       	out	0x18, r18	; 24
+  fe:	4f e3       	ldi	r20, 0x3F	; 63
+ 100:	5d e0       	ldi	r21, 0x0D	; 13
+ 102:	63 e0       	ldi	r22, 0x03	; 3
+ 104:	41 50       	subi	r20, 0x01	; 1
+ 106:	50 40       	sbci	r21, 0x00	; 0
+ 108:	60 40       	sbci	r22, 0x00	; 0
+ 10a:	e1 f7       	brne	.-8      	; 0x104 <main+0xa6>
+ 10c:	00 c0       	rjmp	.+0      	; 0x10e <main+0xb0>
+ 10e:	00 00       	nop
+ 110:	38 bb       	out	0x18, r19	; 24
+ 112:	4f e3       	ldi	r20, 0x3F	; 63
+ 114:	5d e0       	ldi	r21, 0x0D	; 13
+ 116:	63 e0       	ldi	r22, 0x03	; 3
+ 118:	41 50       	subi	r20, 0x01	; 1
+ 11a:	50 40       	sbci	r21, 0x00	; 0
+ 11c:	60 40       	sbci	r22, 0x00	; 0
+ 11e:	e1 f7       	brne	.-8      	; 0x118 <main+0xba>
+ 120:	00 c0       	rjmp	.+0      	; 0x122 <main+0xc4>
+ 122:	00 00       	nop
+		}
+		
+		
+        for (i=3,j=0;i>=2,j<=1;i--,j++)					//loop to shift LED for 0 to 3 
+        {
+			PORTB = (1<<i)|(1<<j);						// led shifting
+ 124:	f8 bb       	out	0x18, r31	; 24
+ 126:	4f e3       	ldi	r20, 0x3F	; 63
+ 128:	5d e0       	ldi	r21, 0x0D	; 13
+ 12a:	63 e0       	ldi	r22, 0x03	; 3
+ 12c:	41 50       	subi	r20, 0x01	; 1
+ 12e:	50 40       	sbci	r21, 0x00	; 0
+ 130:	60 40       	sbci	r22, 0x00	; 0
+ 132:	e1 f7       	brne	.-8      	; 0x12c <main+0xce>
+ 134:	00 c0       	rjmp	.+0      	; 0x136 <main+0xd8>
+ 136:	00 00       	nop
+ 138:	a8 bb       	out	0x18, r26	; 24
+ 13a:	4f e3       	ldi	r20, 0x3F	; 63
+ 13c:	5d e0       	ldi	r21, 0x0D	; 13
+ 13e:	63 e0       	ldi	r22, 0x03	; 3
+ 140:	41 50       	subi	r20, 0x01	; 1
+ 142:	50 40       	sbci	r21, 0x00	; 0
+ 144:	60 40       	sbci	r22, 0x00	; 0
+ 146:	e1 f7       	brne	.-8      	; 0x140 <main+0xe2>
+ 148:	00 c0       	rjmp	.+0      	; 0x14a <main+0xec>
+ 14a:	00 00       	nop
+ 14c:	91 cf       	rjmp	.-222    	; 0x70 <main+0x12>
+
+0000014e <_exit>:
+ 14e:	f8 94       	cli
+
+00000150 <__stop_program>:
+ 150:	ff cf       	rjmp	.-2      	; 0x150 <__stop_program>

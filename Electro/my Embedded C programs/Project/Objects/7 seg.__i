@@ -1,0 +1,1 @@
+"..\7 seg.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\7 seg.lst) TABS (2) OBJECT(.\Objects\7 seg.obj)

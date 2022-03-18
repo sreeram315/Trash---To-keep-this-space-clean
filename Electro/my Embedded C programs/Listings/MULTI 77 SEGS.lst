@@ -1,0 +1,80 @@
+A51 MACRO ASSEMBLER  MULTI_77_SEGS                                                        03/03/2018 16:36:18 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\MULTI 77 SEGS.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE MULTI 77 SEGS.ASM SET(SMALL) DEBUG PRINT(.\Listings\MULTI 77 SEGS.lst) 
+                      OBJECT(.\Objects\MULTI 77 SEGS.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0300                   1     ORG 0300H
+0300 C0F9A4B0          2             DB 0C0H,0F9H,0A4H,0B0H,99H,92H,82H,0F8H,80H,90H
+0304 999282F8                
+0308 8090                    
+                       3     
+0200                   4     ORG 0200H
+0200                   5             LOOP:
+0200 75B0C0            6             MOV P3,#0C0H
+0203 5134              7             ACALL COUNT
+0205 75B0F9            8             MOV P3,#0F9H
+0208 5134              9             ACALL COUNT
+020A 75B0A4           10             MOV P3,#0A4H
+020D 5134             11             ACALL COUNT
+020F 75B0B0           12             MOV P3,#0B0H
+0212 5134             13             ACALL COUNT
+0214 75B099           14             MOV P3,#99H
+0217 5134             15             ACALL COUNT
+0219 75B092           16             MOV P3,#92H
+021C 5134             17             ACALL COUNT
+021E 75B082           18             MOV P3,#82H
+0221 5134             19             ACALL COUNT
+0223 75B0F8           20             MOV P3,#0F8H
+0226 5134             21             ACALL COUNT
+0228 75B080           22             MOV P3,#80H
+022B 5134             23             ACALL COUNT
+022D 75B090           24             MOV P3,#90H
+0230 5134             25             ACALL COUNT
+0232 80CC             26             JMP LOOP
+                      27             
+0234                  28             COUNT:
+0234 780A             29             L2: MOV R0,#0AH
+0236 900300           30                     MOV DPTR,#0300H
+0239 E4               31                     L1: CLR A
+023A 93               32                             MOVC A,@A+DPTR
+023B F5A0             33                             MOV P2,A
+023D 5144             34                             ACALL DELAY
+023F A3               35                             INC DPTR
+0240 D8F7             36                             DJNZ R0, L1
+0242 80F0             37                             SJMP L2
+                      38                             
+                      39                             
+0244 79FF             40                             DELAY: MOV R1,#0FFH
+0246 7AFF             41                             L3:             MOV R2,#0FFH
+0248 DAFE             42                             L4:             DJNZ R2,L4
+024A D9FA             43                                             DJNZ R1,L3
+024C 22               44                                             RET
+                      45                                             END
+A51 MACRO ASSEMBLER  MULTI_77_SEGS                                                        03/03/2018 16:36:18 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+COUNT. . . . . . .  C ADDR   0234H   A   
+DELAY. . . . . . .  C ADDR   0244H   A   
+L1 . . . . . . . .  C ADDR   0239H   A   
+L2 . . . . . . . .  C ADDR   0234H   A   
+L3 . . . . . . . .  C ADDR   0246H   A   
+L4 . . . . . . . .  C ADDR   0248H   A   
+LOOP . . . . . . .  C ADDR   0200H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

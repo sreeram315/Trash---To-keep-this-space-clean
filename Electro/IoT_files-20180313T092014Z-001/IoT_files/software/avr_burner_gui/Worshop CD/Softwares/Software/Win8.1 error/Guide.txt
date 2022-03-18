@@ -1,0 +1,16 @@
+You can easily work with avr studio-4 in windows8.1 also.
+
+Just you have follow few steps.
+
+1- Install avr studio-4.
+2- Install WinAVR
+3- Now, you have to copy a .dll file which is named as   >>    msys-1.0.dll
+4- Now, paste your copied file to the following directory.
+
+	C:\WinAVR-20080610\utils\bin
+
+
+
+For more querries : 
+	E-mail: info@i3indya.com
+	Contact No:  9560605666

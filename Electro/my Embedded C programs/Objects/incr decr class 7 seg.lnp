@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\7 seg incr decr.obj" 
+TO ".\Objects\incr decr class 7 seg" 
+PRINT(".\Listings\incr decr class 7 seg.m51") RAMSIZE(256) 

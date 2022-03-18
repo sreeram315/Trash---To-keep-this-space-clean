@@ -1,0 +1,608 @@
+
+iot_T_and_R.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000035c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         000000d8  00800060  0000035c  000003f0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000065  00800138  00800138  000004c8  2**0
+                  ALLOC
+  3 .stab         00000954  00000000  00000000  000004c8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      0000014d  00000000  00000000  00000e1c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 000000a0  00000000  00000000  00000f70  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000008b9  00000000  00000000  00001010  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000001f2  00000000  00000000  000018c9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000004a7  00000000  00000000  00001abb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000080  00000000  00000000  00001f64  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000011b  00000000  00000000  00001fe4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000057  00000000  00000000  000020ff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	11 e0       	ldi	r17, 0x01	; 1
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ec e5       	ldi	r30, 0x5C	; 92
+  68:	f3 e0       	ldi	r31, 0x03	; 3
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a8 33       	cpi	r26, 0x38	; 56
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	11 e0       	ldi	r17, 0x01	; 1
+  78:	a8 e3       	ldi	r26, 0x38	; 56
+  7a:	b1 e0       	ldi	r27, 0x01	; 1
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	ad 39       	cpi	r26, 0x9D	; 157
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 7d 00 	call	0xfa	; 0xfa <main>
+  8a:	0c 94 ac 01 	jmp	0x358	; 0x358 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <adc>:
+#include <stdlib.h>
+#include <string.h>
+#define delay _delay_ms(2000)
+void adc()
+{
+	ADCSRA = 0b10000111;	// Enable ADC 
+  92:	87 e8       	ldi	r24, 0x87	; 135
+  94:	86 b9       	out	0x06, r24	; 6
+	ADMUX = 0b11000000;		// for channel zero(ADC0)
+  96:	80 ec       	ldi	r24, 0xC0	; 192
+  98:	87 b9       	out	0x07, r24	; 7
+}
+  9a:	08 95       	ret
+
+0000009c <buzzer>:
+
+
+
+void buzzer()
+	{
+			PORTA|=(1<<PA7);
+  9c:	df 9a       	sbi	0x1b, 7	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  9e:	8f ef       	ldi	r24, 0xFF	; 255
+  a0:	91 ee       	ldi	r25, 0xE1	; 225
+  a2:	a4 e0       	ldi	r26, 0x04	; 4
+  a4:	81 50       	subi	r24, 0x01	; 1
+  a6:	90 40       	sbci	r25, 0x00	; 0
+  a8:	a0 40       	sbci	r26, 0x00	; 0
+  aa:	e1 f7       	brne	.-8      	; 0xa4 <buzzer+0x8>
+  ac:	00 c0       	rjmp	.+0      	; 0xae <buzzer+0x12>
+  ae:	00 00       	nop
+			_delay_ms(100);
+			PORTA&=~(1<<PA7);
+  b0:	df 98       	cbi	0x1b, 7	; 27
+  b2:	8f ef       	ldi	r24, 0xFF	; 255
+  b4:	91 ee       	ldi	r25, 0xE1	; 225
+  b6:	a4 e0       	ldi	r26, 0x04	; 4
+  b8:	81 50       	subi	r24, 0x01	; 1
+  ba:	90 40       	sbci	r25, 0x00	; 0
+  bc:	a0 40       	sbci	r26, 0x00	; 0
+  be:	e1 f7       	brne	.-8      	; 0xb8 <buzzer+0x1c>
+  c0:	00 c0       	rjmp	.+0      	; 0xc2 <buzzer+0x26>
+  c2:	00 00       	nop
+			_delay_ms(100);
+	}			
+  c4:	08 95       	ret
+
+000000c6 <tt>:
+
+
+
+						void tt(unsigned char t)
+						{
+							while(!(UCSRA&(1<<UDRE)));				// hold until conversion is completed
+  c6:	5d 9b       	sbis	0x0b, 5	; 11
+  c8:	fe cf       	rjmp	.-4      	; 0xc6 <tt>
+							UDR=t;									// PUT data into UDR registor
+  ca:	8c b9       	out	0x0c, r24	; 12
+						}
+  cc:	08 95       	ret
+
+000000ce <usart_tx>:
+
+
+void usart_tx(unsigned char *tx)
+{
+  ce:	cf 93       	push	r28
+  d0:	df 93       	push	r29
+  d2:	ec 01       	movw	r28, r24
+	while(*tx!='\0')						// transfer data until we get NULL character ('\0')
+  d4:	88 81       	ld	r24, Y
+  d6:	88 23       	and	r24, r24
+  d8:	31 f0       	breq	.+12     	; 0xe6 <usart_tx+0x18>
+							while(!(UCSRA&(1<<UDRE)));				// hold until conversion is completed
+							UDR=t;									// PUT data into UDR registor
+						}
+
+
+void usart_tx(unsigned char *tx)
+  da:	21 96       	adiw	r28, 0x01	; 1
+{
+	while(*tx!='\0')						// transfer data until we get NULL character ('\0')
+	{
+		tt(*tx);
+  dc:	0e 94 63 00 	call	0xc6	; 0xc6 <tt>
+						}
+
+
+void usart_tx(unsigned char *tx)
+{
+	while(*tx!='\0')						// transfer data until we get NULL character ('\0')
+  e0:	89 91       	ld	r24, Y+
+  e2:	88 23       	and	r24, r24
+  e4:	d9 f7       	brne	.-10     	; 0xdc <usart_tx+0xe>
+	{
+		tt(*tx);
+		tx++;								// next character
+	}
+}
+  e6:	df 91       	pop	r29
+  e8:	cf 91       	pop	r28
+  ea:	08 95       	ret
+
+000000ec <u_init>:
+
+
+						void u_init()
+						{
+							UBRRL=8;					// PUT that value for 115200 BAUDRATE by chart
+  ec:	88 e0       	ldi	r24, 0x08	; 8
+  ee:	89 b9       	out	0x09, r24	; 9
+							UCSRB|=(1<<TXEN);				// transmitt enable
+  f0:	53 9a       	sbi	0x0a, 3	; 10
+							UCSRC|=(1<<URSEL)|(1<<UCSZ0)|(1<<UCSZ1);	// setting for 8 bit character size (ex: 'A' = 01000001)
+  f2:	80 b5       	in	r24, 0x20	; 32
+  f4:	86 68       	ori	r24, 0x86	; 134
+  f6:	80 bd       	out	0x20, r24	; 32
+						}
+  f8:	08 95       	ret
+
+000000fa <main>:
+
+unsigned char arr[100];
+
+int main(void)
+{
+							DDRA = 0b10000000;							// PORTA as input PORT for analog sensors
+  fa:	80 e8       	ldi	r24, 0x80	; 128
+  fc:	8a bb       	out	0x1a, r24	; 26
+							DDRB = 0B11111111;					//PORTB as OUTPUT PORT
+  fe:	8f ef       	ldi	r24, 0xFF	; 255
+ 100:	87 bb       	out	0x17, r24	; 23
+							DDRA |=(1<<PA7);						// OUTPUT direction for Buzzer
+ 102:	d7 9a       	sbi	0x1a, 7	; 26
+/************************************************************************/
+/*                             Function initialization                                          */
+/************************************************************************/
+			adc();												//ADC initialization 
+ 104:	0e 94 49 00 	call	0x92	; 0x92 <adc>
+			u_init();											//UART initialization
+ 108:	0e 94 76 00 	call	0xec	; 0xec <u_init>
+	
+	usart_tx("AT+CWQAP\r\n");									//disconnect previous connection (Wifi)
+ 10c:	80 e6       	ldi	r24, 0x60	; 96
+ 10e:	90 e0       	ldi	r25, 0x00	; 0
+ 110:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+ 114:	8f ef       	ldi	r24, 0xFF	; 255
+ 116:	97 ea       	ldi	r25, 0xA7	; 167
+ 118:	a1 e6       	ldi	r26, 0x61	; 97
+ 11a:	81 50       	subi	r24, 0x01	; 1
+ 11c:	90 40       	sbci	r25, 0x00	; 0
+ 11e:	a0 40       	sbci	r26, 0x00	; 0
+ 120:	e1 f7       	brne	.-8      	; 0x11a <main+0x20>
+ 122:	00 c0       	rjmp	.+0      	; 0x124 <main+0x2a>
+ 124:	00 00       	nop
+	delay;
+	usart_tx("ATE1\r\n");										//Local ECHO ON
+ 126:	8b e6       	ldi	r24, 0x6B	; 107
+ 128:	90 e0       	ldi	r25, 0x00	; 0
+ 12a:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+ 12e:	8f ef       	ldi	r24, 0xFF	; 255
+ 130:	97 ea       	ldi	r25, 0xA7	; 167
+ 132:	a1 e6       	ldi	r26, 0x61	; 97
+ 134:	81 50       	subi	r24, 0x01	; 1
+ 136:	90 40       	sbci	r25, 0x00	; 0
+ 138:	a0 40       	sbci	r26, 0x00	; 0
+ 13a:	e1 f7       	brne	.-8      	; 0x134 <main+0x3a>
+ 13c:	00 c0       	rjmp	.+0      	; 0x13e <main+0x44>
+ 13e:	00 00       	nop
+	delay;
+	usart_tx("AT+CWJAP=\" wifi name \"\,\"   password    \"\r\n");		// connect to wifi network
+ 140:	82 e7       	ldi	r24, 0x72	; 114
+ 142:	90 e0       	ldi	r25, 0x00	; 0
+ 144:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+ 148:	8f ef       	ldi	r24, 0xFF	; 255
+ 14a:	97 ea       	ldi	r25, 0xA7	; 167
+ 14c:	a1 e6       	ldi	r26, 0x61	; 97
+ 14e:	81 50       	subi	r24, 0x01	; 1
+ 150:	90 40       	sbci	r25, 0x00	; 0
+ 152:	a0 40       	sbci	r26, 0x00	; 0
+ 154:	e1 f7       	brne	.-8      	; 0x14e <main+0x54>
+ 156:	00 c0       	rjmp	.+0      	; 0x158 <main+0x5e>
+ 158:	00 00       	nop
+ 15a:	8f ef       	ldi	r24, 0xFF	; 255
+ 15c:	97 ea       	ldi	r25, 0xA7	; 167
+ 15e:	a1 e6       	ldi	r26, 0x61	; 97
+ 160:	81 50       	subi	r24, 0x01	; 1
+ 162:	90 40       	sbci	r25, 0x00	; 0
+ 164:	a0 40       	sbci	r26, 0x00	; 0
+ 166:	e1 f7       	brne	.-8      	; 0x160 <main+0x66>
+ 168:	00 c0       	rjmp	.+0      	; 0x16a <main+0x70>
+ 16a:	00 00       	nop
+	delay;	delay;						// to make (") to character use (\") Otherwise it will close the string and will show the ERROR
+	
+		buzzer();
+ 16c:	0e 94 4e 00 	call	0x9c	; 0x9c <buzzer>
+		buzzer();
+ 170:	0e 94 4e 00 	call	0x9c	; 0x9c <buzzer>
+	while(1)
+	{
+		usart_tx("ATE1\r\n");												//Local ECHO ON
+ 174:	0b e6       	ldi	r16, 0x6B	; 107
+ 176:	10 e0       	ldi	r17, 0x00	; 0
+		_delay_ms(500);
+		usart_tx("AT+CIPMUX=1\r\n");										// Enable multiple connection
+ 178:	0f 2e       	mov	r0, r31
+ 17a:	fd e9       	ldi	r31, 0x9D	; 157
+ 17c:	ef 2e       	mov	r14, r31
+ 17e:	f0 e0       	ldi	r31, 0x00	; 0
+ 180:	ff 2e       	mov	r15, r31
+ 182:	f0 2d       	mov	r31, r0
+		_delay_ms(500);
+		usart_tx("AT+CIPSERVER=1,80\r\n");									//Enable PORT 80
+ 184:	0f 2e       	mov	r0, r31
+ 186:	fb ea       	ldi	r31, 0xAB	; 171
+ 188:	cf 2e       	mov	r12, r31
+ 18a:	f0 e0       	ldi	r31, 0x00	; 0
+ 18c:	df 2e       	mov	r13, r31
+ 18e:	f0 2d       	mov	r31, r0
+		_delay_ms(500);
+		usart_tx("AT+CIPSTART=4,\"TCP\",\"184.106.153.149\",80\r\n");		//Connect to ThingSpeak (IP address --> 184.106.153.149)
+ 190:	0f 2e       	mov	r0, r31
+ 192:	ff eb       	ldi	r31, 0xBF	; 191
+ 194:	af 2e       	mov	r10, r31
+ 196:	f0 e0       	ldi	r31, 0x00	; 0
+ 198:	bf 2e       	mov	r11, r31
+ 19a:	f0 2d       	mov	r31, r0
+										buzzer();
+								delay;
+										buzzer();
+								delay;
+																			// waiting for connection using delay
+		usart_tx("AT+CIPSEND=4,44\r\n");									// send 44 characters on channel 4
+ 19c:	0f 2e       	mov	r0, r31
+ 19e:	fa ee       	ldi	r31, 0xEA	; 234
+ 1a0:	8f 2e       	mov	r8, r31
+ 1a2:	f0 e0       	ldi	r31, 0x00	; 0
+ 1a4:	9f 2e       	mov	r9, r31
+ 1a6:	f0 2d       	mov	r31, r0
+		_delay_ms(1000);
+		usart_tx("GET /update?key=WIGWO4TV8LFSFBHM&field1=");				// string to transmit the value of ADC
+ 1a8:	0f 2e       	mov	r0, r31
+ 1aa:	fc ef       	ldi	r31, 0xFC	; 252
+ 1ac:	6f 2e       	mov	r6, r31
+ 1ae:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b0:	7f 2e       	mov	r7, r31
+ 1b2:	f0 2d       	mov	r31, r0
+										ADCSRA|=(1<<ADSC);					// ADC conversion is start
+										while(!(ADCSRA&(1<<ADIF)));			//wait for complete conversion
+										as=ADC;								// initialize the value of ADC in as variable
+										itoa(as,arr,10);					// int to char conversion
+ 1b4:	c8 e3       	ldi	r28, 0x38	; 56
+ 1b6:	d1 e0       	ldi	r29, 0x01	; 1
+										usart_tx(arr);						// transmission of ADC value in the form of character
+										usart_tx("\r\n");					//Pressing Enter using Controller 
+ 1b8:	0f 2e       	mov	r0, r31
+ 1ba:	f5 e2       	ldi	r31, 0x25	; 37
+ 1bc:	4f 2e       	mov	r4, r31
+ 1be:	f1 e0       	ldi	r31, 0x01	; 1
+ 1c0:	5f 2e       	mov	r5, r31
+ 1c2:	f0 2d       	mov	r31, r0
+								delay;
+		usart_tx("AT+CIPCLOSE=4\r\n");										//Closing channel 4
+ 1c4:	0f 2e       	mov	r0, r31
+ 1c6:	f8 e2       	ldi	r31, 0x28	; 40
+ 1c8:	2f 2e       	mov	r2, r31
+ 1ca:	f1 e0       	ldi	r31, 0x01	; 1
+ 1cc:	3f 2e       	mov	r3, r31
+ 1ce:	f0 2d       	mov	r31, r0
+	
+		buzzer();
+		buzzer();
+	while(1)
+	{
+		usart_tx("ATE1\r\n");												//Local ECHO ON
+ 1d0:	c8 01       	movw	r24, r16
+ 1d2:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+ 1d6:	8f ef       	ldi	r24, 0xFF	; 255
+ 1d8:	99 e6       	ldi	r25, 0x69	; 105
+ 1da:	a8 e1       	ldi	r26, 0x18	; 24
+ 1dc:	81 50       	subi	r24, 0x01	; 1
+ 1de:	90 40       	sbci	r25, 0x00	; 0
+ 1e0:	a0 40       	sbci	r26, 0x00	; 0
+ 1e2:	e1 f7       	brne	.-8      	; 0x1dc <main+0xe2>
+ 1e4:	00 c0       	rjmp	.+0      	; 0x1e6 <main+0xec>
+ 1e6:	00 00       	nop
+		_delay_ms(500);
+		usart_tx("AT+CIPMUX=1\r\n");										// Enable multiple connection
+ 1e8:	c7 01       	movw	r24, r14
+ 1ea:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+ 1ee:	8f ef       	ldi	r24, 0xFF	; 255
+ 1f0:	99 e6       	ldi	r25, 0x69	; 105
+ 1f2:	a8 e1       	ldi	r26, 0x18	; 24
+ 1f4:	81 50       	subi	r24, 0x01	; 1
+ 1f6:	90 40       	sbci	r25, 0x00	; 0
+ 1f8:	a0 40       	sbci	r26, 0x00	; 0
+ 1fa:	e1 f7       	brne	.-8      	; 0x1f4 <main+0xfa>
+ 1fc:	00 c0       	rjmp	.+0      	; 0x1fe <main+0x104>
+ 1fe:	00 00       	nop
+		_delay_ms(500);
+		usart_tx("AT+CIPSERVER=1,80\r\n");									//Enable PORT 80
+ 200:	c6 01       	movw	r24, r12
+ 202:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+ 206:	8f ef       	ldi	r24, 0xFF	; 255
+ 208:	99 e6       	ldi	r25, 0x69	; 105
+ 20a:	a8 e1       	ldi	r26, 0x18	; 24
+ 20c:	81 50       	subi	r24, 0x01	; 1
+ 20e:	90 40       	sbci	r25, 0x00	; 0
+ 210:	a0 40       	sbci	r26, 0x00	; 0
+ 212:	e1 f7       	brne	.-8      	; 0x20c <main+0x112>
+ 214:	00 c0       	rjmp	.+0      	; 0x216 <main+0x11c>
+ 216:	00 00       	nop
+		_delay_ms(500);
+		usart_tx("AT+CIPSTART=4,\"TCP\",\"184.106.153.149\",80\r\n");		//Connect to ThingSpeak (IP address --> 184.106.153.149)
+ 218:	c5 01       	movw	r24, r10
+ 21a:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+ 21e:	8f ef       	ldi	r24, 0xFF	; 255
+ 220:	97 ea       	ldi	r25, 0xA7	; 167
+ 222:	a1 e6       	ldi	r26, 0x61	; 97
+ 224:	81 50       	subi	r24, 0x01	; 1
+ 226:	90 40       	sbci	r25, 0x00	; 0
+ 228:	a0 40       	sbci	r26, 0x00	; 0
+ 22a:	e1 f7       	brne	.-8      	; 0x224 <main+0x12a>
+ 22c:	00 c0       	rjmp	.+0      	; 0x22e <main+0x134>
+ 22e:	00 00       	nop
+								delay;
+										buzzer();
+ 230:	0e 94 4e 00 	call	0x9c	; 0x9c <buzzer>
+ 234:	8f ef       	ldi	r24, 0xFF	; 255
+ 236:	97 ea       	ldi	r25, 0xA7	; 167
+ 238:	a1 e6       	ldi	r26, 0x61	; 97
+ 23a:	81 50       	subi	r24, 0x01	; 1
+ 23c:	90 40       	sbci	r25, 0x00	; 0
+ 23e:	a0 40       	sbci	r26, 0x00	; 0
+ 240:	e1 f7       	brne	.-8      	; 0x23a <main+0x140>
+ 242:	00 c0       	rjmp	.+0      	; 0x244 <main+0x14a>
+ 244:	00 00       	nop
+								delay;
+										buzzer();
+ 246:	0e 94 4e 00 	call	0x9c	; 0x9c <buzzer>
+ 24a:	8f ef       	ldi	r24, 0xFF	; 255
+ 24c:	97 ea       	ldi	r25, 0xA7	; 167
+ 24e:	a1 e6       	ldi	r26, 0x61	; 97
+ 250:	81 50       	subi	r24, 0x01	; 1
+ 252:	90 40       	sbci	r25, 0x00	; 0
+ 254:	a0 40       	sbci	r26, 0x00	; 0
+ 256:	e1 f7       	brne	.-8      	; 0x250 <main+0x156>
+ 258:	00 c0       	rjmp	.+0      	; 0x25a <main+0x160>
+ 25a:	00 00       	nop
+								delay;
+																			// waiting for connection using delay
+		usart_tx("AT+CIPSEND=4,44\r\n");									// send 44 characters on channel 4
+ 25c:	c4 01       	movw	r24, r8
+ 25e:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+ 262:	8f ef       	ldi	r24, 0xFF	; 255
+ 264:	93 ed       	ldi	r25, 0xD3	; 211
+ 266:	a0 e3       	ldi	r26, 0x30	; 48
+ 268:	81 50       	subi	r24, 0x01	; 1
+ 26a:	90 40       	sbci	r25, 0x00	; 0
+ 26c:	a0 40       	sbci	r26, 0x00	; 0
+ 26e:	e1 f7       	brne	.-8      	; 0x268 <main+0x16e>
+ 270:	00 c0       	rjmp	.+0      	; 0x272 <main+0x178>
+ 272:	00 00       	nop
+		_delay_ms(1000);
+		usart_tx("GET /update?key=WIGWO4TV8LFSFBHM&field1=");				// string to transmit the value of ADC
+ 274:	c3 01       	movw	r24, r6
+ 276:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+										ADCSRA|=(1<<ADSC);					// ADC conversion is start
+ 27a:	36 9a       	sbi	0x06, 6	; 6
+										while(!(ADCSRA&(1<<ADIF)));			//wait for complete conversion
+ 27c:	34 9b       	sbis	0x06, 4	; 6
+ 27e:	fe cf       	rjmp	.-4      	; 0x27c <main+0x182>
+										as=ADC;								// initialize the value of ADC in as variable
+ 280:	84 b1       	in	r24, 0x04	; 4
+ 282:	95 b1       	in	r25, 0x05	; 5
+ 284:	80 93 9c 01 	sts	0x019C, r24
+										itoa(as,arr,10);					// int to char conversion
+ 288:	90 e0       	ldi	r25, 0x00	; 0
+ 28a:	be 01       	movw	r22, r28
+ 28c:	4a e0       	ldi	r20, 0x0A	; 10
+ 28e:	50 e0       	ldi	r21, 0x00	; 0
+ 290:	0e 94 67 01 	call	0x2ce	; 0x2ce <itoa>
+										usart_tx(arr);						// transmission of ADC value in the form of character
+ 294:	ce 01       	movw	r24, r28
+ 296:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+										usart_tx("\r\n");					//Pressing Enter using Controller 
+ 29a:	c2 01       	movw	r24, r4
+ 29c:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+ 2a0:	8f ef       	ldi	r24, 0xFF	; 255
+ 2a2:	97 ea       	ldi	r25, 0xA7	; 167
+ 2a4:	a1 e6       	ldi	r26, 0x61	; 97
+ 2a6:	81 50       	subi	r24, 0x01	; 1
+ 2a8:	90 40       	sbci	r25, 0x00	; 0
+ 2aa:	a0 40       	sbci	r26, 0x00	; 0
+ 2ac:	e1 f7       	brne	.-8      	; 0x2a6 <main+0x1ac>
+ 2ae:	00 c0       	rjmp	.+0      	; 0x2b0 <main+0x1b6>
+ 2b0:	00 00       	nop
+								delay;
+		usart_tx("AT+CIPCLOSE=4\r\n");										//Closing channel 4
+ 2b2:	c1 01       	movw	r24, r2
+ 2b4:	0e 94 67 00 	call	0xce	; 0xce <usart_tx>
+	
+										buzzer();
+ 2b8:	0e 94 4e 00 	call	0x9c	; 0x9c <buzzer>
+/************************************************************************/
+/* Now Performing the task according to the value of ADC
+If the value of ADC is less then 8 all LEDs should be ON otherwise OFF                                                                     */
+/************************************************************************/
+								if (as<8)
+ 2bc:	80 91 9c 01 	lds	r24, 0x019C
+ 2c0:	88 30       	cpi	r24, 0x08	; 8
+ 2c2:	18 f4       	brcc	.+6      	; 0x2ca <main+0x1d0>
+								{
+									PORTB=0b1111;
+ 2c4:	9f e0       	ldi	r25, 0x0F	; 15
+ 2c6:	98 bb       	out	0x18, r25	; 24
+ 2c8:	83 cf       	rjmp	.-250    	; 0x1d0 <main+0xd6>
+								}
+								else
+								{
+									PORTB=0b0000;	
+ 2ca:	18 ba       	out	0x18, r1	; 24
+ 2cc:	81 cf       	rjmp	.-254    	; 0x1d0 <main+0xd6>
+
+000002ce <itoa>:
+ 2ce:	fb 01       	movw	r30, r22
+ 2d0:	9f 01       	movw	r18, r30
+ 2d2:	e8 94       	clt
+ 2d4:	42 30       	cpi	r20, 0x02	; 2
+ 2d6:	c4 f0       	brlt	.+48     	; 0x308 <itoa+0x3a>
+ 2d8:	45 32       	cpi	r20, 0x25	; 37
+ 2da:	b4 f4       	brge	.+44     	; 0x308 <itoa+0x3a>
+ 2dc:	4a 30       	cpi	r20, 0x0A	; 10
+ 2de:	29 f4       	brne	.+10     	; 0x2ea <itoa+0x1c>
+ 2e0:	97 fb       	bst	r25, 7
+ 2e2:	1e f4       	brtc	.+6      	; 0x2ea <itoa+0x1c>
+ 2e4:	90 95       	com	r25
+ 2e6:	81 95       	neg	r24
+ 2e8:	9f 4f       	sbci	r25, 0xFF	; 255
+ 2ea:	64 2f       	mov	r22, r20
+ 2ec:	77 27       	eor	r23, r23
+ 2ee:	0e 94 98 01 	call	0x330	; 0x330 <__udivmodhi4>
+ 2f2:	80 5d       	subi	r24, 0xD0	; 208
+ 2f4:	8a 33       	cpi	r24, 0x3A	; 58
+ 2f6:	0c f0       	brlt	.+2      	; 0x2fa <itoa+0x2c>
+ 2f8:	89 5d       	subi	r24, 0xD9	; 217
+ 2fa:	81 93       	st	Z+, r24
+ 2fc:	cb 01       	movw	r24, r22
+ 2fe:	00 97       	sbiw	r24, 0x00	; 0
+ 300:	a1 f7       	brne	.-24     	; 0x2ea <itoa+0x1c>
+ 302:	16 f4       	brtc	.+4      	; 0x308 <itoa+0x3a>
+ 304:	5d e2       	ldi	r21, 0x2D	; 45
+ 306:	51 93       	st	Z+, r21
+ 308:	10 82       	st	Z, r1
+ 30a:	c9 01       	movw	r24, r18
+ 30c:	0c 94 88 01 	jmp	0x310	; 0x310 <strrev>
+
+00000310 <strrev>:
+ 310:	dc 01       	movw	r26, r24
+ 312:	fc 01       	movw	r30, r24
+ 314:	67 2f       	mov	r22, r23
+ 316:	71 91       	ld	r23, Z+
+ 318:	77 23       	and	r23, r23
+ 31a:	e1 f7       	brne	.-8      	; 0x314 <strrev+0x4>
+ 31c:	32 97       	sbiw	r30, 0x02	; 2
+ 31e:	04 c0       	rjmp	.+8      	; 0x328 <strrev+0x18>
+ 320:	7c 91       	ld	r23, X
+ 322:	6d 93       	st	X+, r22
+ 324:	70 83       	st	Z, r23
+ 326:	62 91       	ld	r22, -Z
+ 328:	ae 17       	cp	r26, r30
+ 32a:	bf 07       	cpc	r27, r31
+ 32c:	c8 f3       	brcs	.-14     	; 0x320 <strrev+0x10>
+ 32e:	08 95       	ret
+
+00000330 <__udivmodhi4>:
+ 330:	aa 1b       	sub	r26, r26
+ 332:	bb 1b       	sub	r27, r27
+ 334:	51 e1       	ldi	r21, 0x11	; 17
+ 336:	07 c0       	rjmp	.+14     	; 0x346 <__udivmodhi4_ep>
+
+00000338 <__udivmodhi4_loop>:
+ 338:	aa 1f       	adc	r26, r26
+ 33a:	bb 1f       	adc	r27, r27
+ 33c:	a6 17       	cp	r26, r22
+ 33e:	b7 07       	cpc	r27, r23
+ 340:	10 f0       	brcs	.+4      	; 0x346 <__udivmodhi4_ep>
+ 342:	a6 1b       	sub	r26, r22
+ 344:	b7 0b       	sbc	r27, r23
+
+00000346 <__udivmodhi4_ep>:
+ 346:	88 1f       	adc	r24, r24
+ 348:	99 1f       	adc	r25, r25
+ 34a:	5a 95       	dec	r21
+ 34c:	a9 f7       	brne	.-22     	; 0x338 <__udivmodhi4_loop>
+ 34e:	80 95       	com	r24
+ 350:	90 95       	com	r25
+ 352:	bc 01       	movw	r22, r24
+ 354:	cd 01       	movw	r24, r26
+ 356:	08 95       	ret
+
+00000358 <_exit>:
+ 358:	f8 94       	cli
+
+0000035a <__stop_program>:
+ 35a:	ff cf       	rjmp	.-2      	; 0x35a <__stop_program>

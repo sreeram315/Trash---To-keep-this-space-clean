@@ -1,0 +1,3 @@
+".\Objects\MULTI 77 SEGS.obj" 
+TO ".\Objects\MULTI 7 SEGS ASSEMBLY" 
+PRINT(".\Listings\MULTI 7 SEGS ASSEMBLY.m51") RAMSIZE(256) 

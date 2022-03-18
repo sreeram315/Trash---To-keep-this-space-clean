@@ -1,0 +1,48 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              03/23/2016 19:38:58 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN Main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Main.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "Includes.h"
+   2          
+   3          // Main function
+   4          void main()
+   5          { 
+   6   1        InitLCD();  // Initialize LCD 
+   7   1        InitI2C();  // Initialize i2c pins                      
+   8   1      
+   9   1        // Set initial time
+  10   1        Set_DS1307_RTC_Time(AM_Time, 5, 00, 00);  // Set time 08:32:59 AM
+  11   1      
+  12   1        // Set initial date
+  13   1        Set_DS1307_RTC_Date(23, 3, 16, Wednesday);  // Set 02-11-2012 @ Friday
+  14   1      
+  15   1        while(1)
+  16   1        {
+  17   2          // Display RTC time on first line of LCD
+  18   2          DisplayTimeToLCD(Get_DS1307_RTC_Time());
+  19   2      
+  20   2          // Display RTC date on second line of LCD
+  21   2          DisplayDateOnLCD(Get_DS1307_RTC_Date());
+  22   2      
+  23   2          delay(65000); // Roughly about 1 second delay
+  24   2        }
+  25   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     49    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

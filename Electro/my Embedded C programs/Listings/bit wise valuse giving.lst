@@ -1,0 +1,42 @@
+C51 COMPILER V9.57.0.0   BIT_WISE_VALUSE_GIVING                                            03/01/2018 20:19:39 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE BIT_WISE_VALUSE_GIVING
+OBJECT MODULE PLACED IN .\Objects\bit wise valuse giving.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE bit wise valuse giving.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRI
+                    -NT(.\Listings\bit wise valuse giving.lst) TABS(2) OBJECT(.\Objects\bit wise valuse giving.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit mybit=P1^1;
+   3          void delay(int time){
+   4   1        unsigned char i,z;
+   5   1        for(i=0;i<time;i++)
+   6   1          for(z=0;z<1275;z++);
+   7   1        
+   8   1      }
+   9          void main(){
+  10   1        
+  11   1      //  unsigned char z;
+  12   1        for(;;){
+  13   2          mybit=0;
+  14   2          delay(100);
+  15   2          mybit=1;
+  16   2          delay(100);
+  17   2        }
+  18   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     49    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

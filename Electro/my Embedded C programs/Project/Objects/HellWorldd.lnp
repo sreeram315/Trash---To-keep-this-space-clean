@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\hell_world.obj" 
+TO ".\Objects\HellWorldd" 
+PRINT(".\Listings\HellWorldd.m51") RAMSIZE(256) 

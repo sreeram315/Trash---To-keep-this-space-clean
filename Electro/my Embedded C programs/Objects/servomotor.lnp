@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\servo.obj" 
+TO ".\Objects\servomotor" 
+PRINT(".\Listings\servomotor.m51") RAMSIZE(256) 
