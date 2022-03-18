@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load render_bundle from webpack_loader %}
+
+
+{% block css %}
+{% render_bundle 'main' 'css' %}
+{% endblock css %}
+
+
+{% block cont_ex %}
+<div id="react-app2"></div>
+{% render_bundle 'main' 'js' %}
+{% endblock cont_ex %}
